@@ -142,10 +142,22 @@ body {
 }
 
 /* Logo */
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.header__logo-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
 .header__logo h2 {
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
-    color: var(--color-primary);
+    color: var(--color-text-primary);
     margin: 0;
     white-space: nowrap;
 }

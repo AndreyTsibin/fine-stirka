@@ -18,11 +18,63 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Логотип -->
+                <div class="header__logo">
+                    <h2>Fine Stirka</h2>
+                </div>
+                
+                <!-- Навигация -->
+                <nav class="header__nav" aria-label="Основная навигация">
+                    <ul class="header__nav-list">
+                        <li><a href="#prices">Цены</a></li>
+                        <li><a href="#advantages">Гарантия</a></li>
+                        <li><a href="#footer">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Контактная информация -->
+                <div class="header__contacts">
+                    <div class="header__phone">
+                        <i class="ri-phone-line"></i>
+                        <a href="tel:+78122188207">8 (812) 218-82-07</a>
+                    </div>
+                    <div class="header__schedule">
+                        <i class="ri-time-line"></i>
+                        <span>7:00-22:00, без выходных</span>
+                    </div>
+                </div>
+                
+                <!-- CTA кнопка -->
+                <div class="header__cta">
+                    <a href="#forma" class="btn btn--primary">
+                        <i class="ri-phone-line"></i>
+                        Вызвать мастера
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
-        <!-- Блоки будут добавляться поэтапно -->
+        <!-- Временный контент для тестирования header -->
+        <section style="height: 150vh; padding: var(--space-16); background: linear-gradient(to bottom, #f0f8ff, #e6f3ff);">
+            <div class="container">
+                <h1 style="font-size: var(--font-size-4xl); color: var(--color-text-primary); margin-bottom: var(--space-8);">
+                    Тестирование Header
+                </h1>
+                <p style="font-size: var(--font-size-lg); color: var(--color-text-secondary); line-height: var(--line-height-relaxed);">
+                    Это временная секция для тестирования фиксированного header. 
+                    Прокрутите страницу, чтобы убедиться, что header остается на месте.
+                    Блоки Hero Section и другие будут добавлены на следующих этапах.
+                </p>
+                <div style="margin-top: var(--space-8);">
+                    <a href="#forma" class="btn btn--primary">Тестовая CTA кнопка</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>

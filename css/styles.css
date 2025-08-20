@@ -227,7 +227,7 @@ body {
 }
 
 .header__schedule i {
-    color: var(--color-secondary);
+    color: var(--color-primary);
     font-size: var(--font-size-base);
 }
 

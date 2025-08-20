@@ -288,7 +288,7 @@ body {
 
 .hero__content {
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-16);
     align-items: center;
     width: 100%;

@@ -1,61 +1,8 @@
 // Fine Stirka - JavaScript functionality
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Modal functionality
-    const modal = document.getElementById('forma');
-    const closeBtn = document.querySelector('.close');
-    
-    // Function to open modal
-    function openModal() {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-    
-    // Function to close modal
-    function closeModal() {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-    
-    // Open modal when clicking CTA links
-    document.addEventListener('click', function(e) {
-        if (e.target.getAttribute('href') === '#forma') {
-            e.preventDefault();
-            openModal();
-        }
-    });
-    
-    // Close modal when clicking X button
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
-    }
-    
-    // Close modal when clicking outside
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            closeModal();
-        }
-    });
-    
-    // Form submission
-    const modalForm = document.querySelector('.modal-form');
-    if (modalForm) {
-        modalForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Here would be form submission logic
-            alert('0O2:0 >B?@02;5=0! K A2O65<AO A 20<8 2 1;8609H55 2@5<O.');
-            closeModal();
-            modalForm.reset();
-        });
-    }
+    // Модальное окно #forma уже готово в Tilda
+    // Все CTA-кнопки используют href="#forma" для открытия модалки
 });
 
 // Countdown timer function (for promotional section)
@@ -102,4 +49,9 @@ function smoothScroll(target) {
             block: 'start'
         });
     }
+}
+
+// Reviews carousel auto-scroll (будет добавлено позднее)
+function initReviewsCarousel() {
+    // Функционал для автопрокрутки отзывов
 }

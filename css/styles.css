@@ -145,6 +145,12 @@ body {
     display: flex;
     align-items: center;
     gap: var(--space-3);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.header__logo:hover {
+    opacity: 0.8;
 }
 
 .header__logo-icon {

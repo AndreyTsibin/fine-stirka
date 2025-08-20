@@ -61,19 +61,49 @@
     </header>
 
     <main>
-        <!-- Временный контент для тестирования header -->
-        <section style="height: 150vh; padding: var(--space-16); background: linear-gradient(to bottom, #f0f8ff, #e6f3ff);">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
             <div class="container">
-                <h1 style="font-size: var(--font-size-4xl); color: var(--color-text-primary); margin-bottom: var(--space-8);">
-                    Тестирование Header
-                </h1>
-                <p style="font-size: var(--font-size-lg); color: var(--color-text-secondary); line-height: var(--line-height-relaxed);">
-                    Это временная секция для тестирования фиксированного header. 
-                    Прокрутите страницу, чтобы убедиться, что header остается на месте.
-                    Блоки Hero Section и другие будут добавлены на следующих этапах.
-                </p>
-                <div style="margin-top: var(--space-8);">
-                    <a href="#forma" class="btn btn--primary">Тестовая CTA кнопка</a>
+                <div class="hero__content">
+                    <!-- Левая часть: текст и УТП -->
+                    <div class="hero__text">
+                        <h1 class="hero__title">
+                            Срочный ремонт стиральных машин в СПБ за 1 час
+                        </h1>
+                        
+                        <p class="hero__subtitle">
+                            Мастер приедет в течение часа. Запчасти в наличии. Гарантия на все работы
+                        </p>
+                        
+                        <!-- УТП блоки -->
+                        <div class="hero__features">
+                            <div class="hero__feature">
+                                <i class="ri-time-line"></i>
+                                <span>Мастер за 60 минут</span>
+                            </div>
+                            <div class="hero__feature">
+                                <i class="ri-tools-line"></i>
+                                <span>Запчасти в наличии</span>
+                            </div>
+                            <div class="hero__feature">
+                                <i class="ri-shield-check-line"></i>
+                                <span>Гарантия на работы</span>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA кнопка -->
+                        <div class="hero__cta">
+                            <a href="#forma" class="btn btn--hero">
+                                <i class="ri-phone-line"></i>
+                                Вызвать мастера бесплатно
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Правая часть: изображение мастера -->
+                    <div class="hero__image">
+                        <img src="images/placeholder-img.jpg" alt="Мастер по ремонту стиральных машин" class="hero__master-img">
+                    </div>
                 </div>
             </div>
         </section>

@@ -48,32 +48,31 @@
 ### Цветовая схема (CSS Variables)
 ```css
 :root {
-  /* Primary Colors */
-  --color-primary: #2563EB;        /* Синий - доверие */
-  --color-primary-dark: #1D4ED8;   /* Темно-синий */
-  --color-primary-light: #60A5FA;  /* Светло-синий */
+  /* Primary Colors - Зеленые тона (основной цвет проекта) */
+  --color-primary: #059669;        /* Основной зеленый */
+  --color-primary-dark: #047857;   /* Темно-зеленый */
+  --color-primary-light: #10B981;  /* Светло-зеленый */
+  --color-primary-pale: #A7F3D0;   /* Бледно-зеленый для фонов */
   
-  /* Secondary Colors */
-  --color-secondary: #059669;      /* Зеленый - CTA */
-  --color-secondary-dark: #047857; /* Темно-зеленый */
-  --color-secondary-light: #10B981;/* Светло-зеленый */
+  /* Accent Colors - Оранжевые тона для срочности и акций */
+  --color-accent: #EA580C;         /* Оранжевый для акций */
+  --color-accent-light: #FB923C;   /* Светло-оранжевый */
+  --color-warning: #F59E0B;        /* Желтый для внимания */
   
-  /* Accent Colors */
-  --color-accent: #EA580C;         /* Оранжевый - urgency */
-  --color-warning: #F59E0B;        /* Желтый - внимание */
+  /* Neutral Colors - Серые тона для текста и фонов */
+  --color-text-primary: #1F2937;   /* Темно-серый текст */
+  --color-text-secondary: #6B7280; /* Серый текст */
+  --color-text-light: #9CA3AF;     /* Светло-серый текст */
+  --color-bg-primary: #FFFFFF;     /* Белый фон */
+  --color-bg-secondary: #F9FAFB;   /* Светло-серый фон */
+  --color-bg-green: #F0FDF4;       /* Очень светло-зеленый фон */
+  --color-bg-dark: #1F2937;        /* Темно-серый фон (вместо черного) */
   
-  /* Neutral Colors */
-  --color-text-primary: #1F2937;   /* Основной текст */
-  --color-text-secondary: #6B7280; /* Вторичный текст */
-  --color-text-light: #9CA3AF;     /* Светлый текст */
-  --color-bg-primary: #FFFFFF;     /* Основной фон */
-  --color-bg-secondary: #F9FAFB;   /* Вторичный фон */
-  --color-bg-dark: #111827;        /* Темный фон */
-  
-  /* Gradients */
+  /* Gradients - Обновленные градиенты на основе зеленой схемы */
   --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  --gradient-cta: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
-  --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-cta: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, #DC2626 100%);
 }
 ```
 
@@ -254,7 +253,7 @@
 **Таблица в современном стиле:**
 - Заголовок: --font-size-4xl, --font-weight-bold
 - Строки таблицы: hover-эффект с изменением фона
-- Цены выделены жирным шрифтом и цветом --color-secondary
+- Цены выделены жирным шрифтом и цветом --color-primary
 
 **Контент таблицы:**
 | Услуга | Цена |

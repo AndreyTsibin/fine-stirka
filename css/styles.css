@@ -676,6 +676,46 @@ body {
     color: var(--color-primary-dark);
 }
 
+/* Кликабельные строки таблицы */
+.pricing__row-clickable {
+    cursor: pointer;
+}
+
+.pricing__row-clickable:hover {
+    background-color: var(--color-bg-secondary) !important;
+}
+
+/* Кнопка "Показать еще" */
+.pricing__show-more {
+    text-align: center;
+    margin: var(--space-8) 0;
+}
+
+.btn--secondary {
+    background: white;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    transition: all 0.3s ease;
+}
+
+.btn--secondary:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--secondary i {
+    font-size: var(--font-size-xl);
+}
+
 /* CTA кнопка */
 .pricing__cta {
     text-align: center;

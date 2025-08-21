@@ -1725,7 +1725,7 @@ body {
 
 .footer__main {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1.8fr 1.2fr 1fr;
     gap: var(--space-12);
     margin-bottom: var(--space-12);
     padding-bottom: var(--space-12);

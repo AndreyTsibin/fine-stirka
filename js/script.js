@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPricingToggle();
     initPromoTimer();
     initTestimonialsCarousel();
+    initSmoothScrolling();
 });
 
 // Показать/скрыть дополнительные услуги в прайс-листе
@@ -114,10 +115,41 @@ function initTestimonialsCarousel() {
     });
 }
 
-// Плавная прокрутка к элементу
-const smoothScroll = target => {
-    document.querySelector(target)?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+// Инициализация плавной прокрутки для всех ссылок
+function initSmoothScrolling() {
+    const links = document.querySelectorAll('a[href^="#"]');
+    const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
+    
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
+}
+
+// Плавная прокрутка к элементу (резервная функция)
+const smoothScroll = target => {
+    const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
+    const targetElement = document.querySelector(target);
+    
+    if (targetElement) {
+        const targetPosition = targetElement.offsetTop - headerHeight - 20;
+        
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
 };

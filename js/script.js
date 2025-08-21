@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     initPricingToggle();
     initPromoTimer();
+    initTestimonialsCarousel();
 });
 
 // Показать/скрыть дополнительные услуги в прайс-листе
@@ -57,6 +58,65 @@ function initPromoTimer() {
     
     updateTimer();
     setInterval(updateTimer, 1000);
+}
+
+// Карусель отзывов с автопрокруткой
+function initTestimonialsCarousel() {
+    const track = document.getElementById('testimonialsTrack');
+    const slides = document.querySelectorAll('.testimonials__slide');
+    const indicators = document.querySelectorAll('.testimonials__indicator');
+    
+    if (!track || !slides.length || !indicators.length) return;
+    
+    let currentSlide = 0;
+    let isAutoPlay = true;
+    let autoPlayInterval;
+    
+    // Показать слайд
+    const showSlide = (index) => {
+        // Убрать active у всех слайдов и индикаторов
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Добавить active к текущему слайду и индикатору
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+        
+        currentSlide = index;
+    };
+    
+    // Следующий слайд
+    const nextSlide = () => {
+        const next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+    };
+    
+    // Автопрокрутка
+    const startAutoPlay = () => {
+        if (isAutoPlay) {
+            autoPlayInterval = setInterval(nextSlide, 5000); // Каждые 5 секунд
+        }
+    };
+    
+    const stopAutoPlay = () => {
+        clearInterval(autoPlayInterval);
+    };
+    
+    // Обработчики для индикаторов
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
+            stopAutoPlay();
+            setTimeout(startAutoPlay, 10000); // Возобновить через 10 сек
+        });
+    });
+    
+    // Пауза при наведении
+    track.addEventListener('mouseenter', stopAutoPlay);
+    track.addEventListener('mouseleave', startAutoPlay);
+    
+    // Запуск автопрокрутки
+    startAutoPlay();
 }
 
 // Плавная прокрутка к элементу

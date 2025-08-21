@@ -65,12 +65,12 @@ function initTestimonialsCarousel() {
     const track = document.getElementById('testimonialsTrack');
     const slides = document.querySelectorAll('.testimonials__slide');
     const indicators = document.querySelectorAll('.testimonials__indicator');
+    const prevBtn = document.getElementById('prevSlide');
+    const nextBtn = document.getElementById('nextSlide');
     
-    if (!track || !slides.length || !indicators.length) return;
+    if (!track || !slides.length || !indicators.length || !prevBtn || !nextBtn) return;
     
     let currentSlide = 0;
-    let isAutoPlay = true;
-    let autoPlayInterval;
     
     // Показать слайд
     const showSlide = (index) => {
@@ -91,32 +91,27 @@ function initTestimonialsCarousel() {
         showSlide(next);
     };
     
-    // Автопрокрутка
-    const startAutoPlay = () => {
-        if (isAutoPlay) {
-            autoPlayInterval = setInterval(nextSlide, 5000); // Каждые 5 секунд
-        }
+    // Предыдущий слайд
+    const prevSlide = () => {
+        const prev = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prev);
     };
     
-    const stopAutoPlay = () => {
-        clearInterval(autoPlayInterval);
-    };
+    // Обработчики для стрелок
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+    });
+    
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+    });
     
     // Обработчики для индикаторов
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => {
             showSlide(index);
-            stopAutoPlay();
-            setTimeout(startAutoPlay, 10000); // Возобновить через 10 сек
         });
     });
-    
-    // Пауза при наведении
-    track.addEventListener('mouseenter', stopAutoPlay);
-    track.addEventListener('mouseleave', startAutoPlay);
-    
-    // Запуск автопрокрутки
-    startAutoPlay();
 }
 
 // Плавная прокрутка к элементу

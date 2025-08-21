@@ -261,7 +261,12 @@ body {
 .btn--primary {
     background: var(--gradient-cta);
     color: white;
-    box-shadow: var(--shadow-base);
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-md);
+    gap: var(--space-3);
 }
 
 .btn--primary:hover {
@@ -270,7 +275,7 @@ body {
 }
 
 .btn--primary i {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
 }
 
 /* Body padding for fixed header */
@@ -345,25 +350,6 @@ body {
     margin-top: var(--space-8);
 }
 
-.btn--hero {
-    background: var(--gradient-cta);
-    color: white;
-    padding: var(--space-5) var(--space-10);
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-semibold);
-    border-radius: var(--radius-full);
-    box-shadow: var(--shadow-md);
-    border: none;
-}
-
-.btn--hero:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-.btn--hero i {
-    font-size: var(--font-size-xl);
-}
 
 /* Hero Image */
 .hero__image {
@@ -716,34 +702,6 @@ body {
     font-size: var(--font-size-xl);
 }
 
-/* CTA кнопка */
-.pricing__cta {
-    text-align: center;
-    margin-top: var(--space-12);
-}
 
-.btn--cta {
-    background: var(--gradient-cta);
-    color: white;
-    padding: var(--space-6) var(--space-12);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
-    border-radius: var(--radius-full);
-    box-shadow: var(--shadow-lg);
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-3);
-    transition: all 0.3s ease;
-}
-
-.btn--cta:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-xl);
-}
-
-.btn--cta i {
-    font-size: var(--font-size-2xl);
-}
 
 /* Модальное окно #forma уже готово в Tilda */

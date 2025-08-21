@@ -1601,86 +1601,34 @@ body {
 }
 
 .final-cta__action {
-    margin-bottom: var(--space-12);
+    text-align: center;
 }
 
-.btn--cta {
+.final-cta__phone-btn {
     background: white;
     color: var(--color-primary);
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-bold);
     padding: var(--space-6) var(--space-12);
     border-radius: var(--radius-2xl);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
     display: inline-flex;
-    flex-direction: column;
     align-items: center;
-    gap: var(--space-1);
-    min-width: 320px;
-}
-
-.btn--cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    background: #f8f8f8;
-}
-
-.btn--cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.5s ease;
-}
-
-.btn--cta:hover::before {
-    left: 100%;
-}
-
-.final-cta__btn {
+    gap: var(--space-4);
+    text-decoration: none;
+    margin-bottom: var(--space-6);
     animation: pulse-cta 2s infinite;
 }
 
-.final-cta__btn-text {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
+.final-cta__phone-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    background: #f8f8f8;
+    color: var(--color-primary);
 }
 
-.final-cta__btn-subtext {
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-medium);
-    color: var(--color-primary-dark);
-    opacity: 0.8;
-}
-
-.final-cta__phone {
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    padding-top: var(--space-8);
-}
-
-.final-cta__phone-link {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-3);
-    color: white;
-    text-decoration: none;
-    font-size: var(--font-size-3xl);
-    font-weight: var(--font-weight-bold);
-    margin-bottom: var(--space-4);
-    transition: color 0.3s ease;
-}
-
-.final-cta__phone-link:hover {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.final-cta__phone-link i {
+.final-cta__phone-btn i {
     font-size: var(--font-size-3xl);
 }
 
@@ -1721,7 +1669,7 @@ body {
         gap: var(--space-8);
     }
     
-    .final-cta__phone-link {
+    .final-cta__phone-btn {
         font-size: var(--font-size-2xl);
     }
 }
@@ -1746,17 +1694,10 @@ body {
         align-items: center;
     }
     
-    .btn--cta {
-        min-width: 280px;
-        padding: var(--space-5) var(--space-8);
-    }
-    
-    .final-cta__btn-text {
-        font-size: var(--font-size-lg);
-    }
-    
-    .final-cta__phone-link {
+    .final-cta__phone-btn {
         font-size: var(--font-size-xl);
+        padding: var(--space-5) var(--space-8);
+        gap: var(--space-3);
     }
 }
 

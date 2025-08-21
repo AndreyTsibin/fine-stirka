@@ -715,6 +715,164 @@ body {
     font-size: var(--font-size-xl);
 }
 
+/* ==============================
+   АКЦИОННЫЙ БЛОК
+   ============================== */
+
+.promo {
+    padding: var(--space-20) 0;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-warning) 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.promo__content {
+    position: relative;
+    z-index: 2;
+}
+
+.promo__header {
+    margin-bottom: var(--space-12);
+}
+
+.promo__title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-bold);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--space-4);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.promo__subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-medium);
+    opacity: 0.95;
+}
+
+/* Таймер обратного отсчета */
+.promo__timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+    flex-wrap: wrap;
+}
+
+.timer__item {
+    background: rgba(255,255,255,0.15);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6) var(--space-4);
+    min-width: 100px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: var(--shadow-lg);
+}
+
+.timer__value {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-extrabold);
+    font-family: 'Ubuntu Mono', monospace;
+    line-height: 1;
+    margin-bottom: var(--space-1);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.timer__label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-medium);
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.timer__separator {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-bold);
+    opacity: 0.8;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 0.8; }
+    51%, 100% { opacity: 0.3; }
+}
+
+/* CTA секция */
+.promo__cta {
+    margin-top: var(--space-8);
+}
+
+.promo__btn {
+    font-size: var(--font-size-xl);
+    padding: var(--space-6) var(--space-12);
+    background: white;
+    color: var(--color-accent);
+    border: none;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+}
+
+.promo__btn:hover {
+    background: var(--color-bg-primary);
+    color: var(--color-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.promo__btn i {
+    color: var(--color-warning);
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+}
+
+/* Адаптивность для акционного блока */
+@media (max-width: 768px) {
+    .promo__title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .promo__timer {
+        gap: var(--space-2);
+    }
+    
+    .timer__item {
+        min-width: 80px;
+        padding: var(--space-4) var(--space-3);
+    }
+    
+    .timer__value {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .promo__btn {
+        font-size: var(--font-size-lg);
+        padding: var(--space-5) var(--space-10);
+    }
+}
+
 
 
 /* Модальное окно #forma уже готово в Tilda */

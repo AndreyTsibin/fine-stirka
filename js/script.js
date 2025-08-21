@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Инициализация функционала "Показать еще" для прайс-листа
     initPricingToggle();
+    
+    // Инициализация таймера обратного отсчета для акционного блока
+    initPromoTimer();
 });
 
 // Функционал показа/скрытия дополнительных услуг в прайс-листе
@@ -40,39 +43,51 @@ function initPricingToggle() {
     }
 }
 
-// Countdown timer function (for promotional section)
-function startCountdown() {
-    // Get current date and time
-    const now = new Date().getTime();
+// Инициализация таймера обратного отсчета для акционного блока
+function initPromoTimer() {
+    const hoursElement = document.getElementById('hours');
+    const minutesElement = document.getElementById('minutes');
+    const secondsElement = document.getElementById('seconds');
     
-    // Calculate time until end of day (23:59)
-    const today = new Date();
-    today.setHours(23, 59, 59, 999);
-    const endOfDay = today.getTime();
+    if (!hoursElement || !minutesElement || !secondsElement) {
+        return;
+    }
     
-    // Update countdown every second
-    const timer = setInterval(function() {
-        const currentTime = new Date().getTime();
-        const timeLeft = endOfDay - currentTime;
+    // Запуск таймера
+    startPromoCountdown();
+    
+    function startPromoCountdown() {
+        // Получить текущую дату и время
+        const now = new Date();
         
-        // Calculate hours, minutes and seconds
-        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        // Установить окончание дня (23:59:59)
+        const endOfDay = new Date();
+        endOfDay.setHours(23, 59, 59, 999);
         
-        // Display countdown
-        const countdownElement = document.getElementById('countdown');
-        if (countdownElement) {
-            countdownElement.innerHTML = 
-                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }
-        
-        // If countdown is finished, restart for next day
-        if (timeLeft < 0) {
-            clearInterval(timer);
-            setTimeout(startCountdown, 1000);
-        }
-    }, 1000);
+        // Обновление таймера каждую секунду
+        const timer = setInterval(function() {
+            const currentTime = new Date().getTime();
+            const timeLeft = endOfDay.getTime() - currentTime;
+            
+            // Если время истекло, перезапустить на следующий день
+            if (timeLeft < 0) {
+                clearInterval(timer);
+                // Перезапуск через секунду для следующего дня
+                setTimeout(startPromoCountdown, 1000);
+                return;
+            }
+            
+            // Рассчитать часы, минуты и секунды
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            // Обновить отображение
+            hoursElement.textContent = hours.toString().padStart(2, '0');
+            minutesElement.textContent = minutes.toString().padStart(2, '0');
+            secondsElement.textContent = seconds.toString().padStart(2, '0');
+        }, 1000);
+    }
 }
 
 // Smooth scroll function

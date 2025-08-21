@@ -1605,31 +1605,33 @@ body {
 }
 
 .final-cta__phone-btn {
+    font-size: var(--font-size-xl);
+    padding: var(--space-6) var(--space-12);
     background: white;
     color: var(--color-primary);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-semibold);
-    padding: var(--space-3) var(--space-6);
+    border: none;
     border-radius: var(--radius-full);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
     text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    transition: all 0.3s ease;
     margin-bottom: var(--space-6);
     animation: pulse-cta 2s infinite;
 }
 
 .final-cta__phone-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    background: #f8f8f8;
+    background: var(--color-bg-primary);
     color: var(--color-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
 }
 
 .final-cta__phone-btn i {
-    font-size: var(--font-size-base);
+    color: var(--color-primary-light);
+    font-size: var(--font-size-xl);
 }
 
 .final-cta__schedule {
@@ -1670,7 +1672,8 @@ body {
     }
     
     .final-cta__phone-btn {
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-lg);
+        padding: var(--space-5) var(--space-10);
     }
 }
 
@@ -1695,9 +1698,8 @@ body {
     }
     
     .final-cta__phone-btn {
-        font-size: var(--font-size-base);
-        padding: var(--space-3) var(--space-6);
-        gap: var(--space-2);
+        font-size: var(--font-size-lg);
+        padding: var(--space-5) var(--space-10);
     }
 }
 

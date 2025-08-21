@@ -1582,7 +1582,7 @@ body {
     display: flex;
     justify-content: center;
     gap: var(--space-12);
-    margin-bottom: var(--space-16);
+    margin-bottom: var(--space-8);
     flex-wrap: wrap;
 }
 

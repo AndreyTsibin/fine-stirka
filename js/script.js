@@ -1,107 +1,68 @@
-// Fine Stirka - JavaScript functionality
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Модальное окно #forma уже готово в Tilda
-    // Все CTA-кнопки используют href="#forma" для открытия модалки
+document.addEventListener('DOMContentLoaded', () => {
+    // Динамическая замена H1 для маркетинговых кампаний
+    const newTitle = new URLSearchParams(location.search).get('h');
+    if (newTitle) {
+        document.querySelectorAll('h1').forEach(h1 => h1.innerHTML = newTitle);
+    }
     
-    // Инициализация функционала "Показать еще" для прайс-листа
     initPricingToggle();
-    
-    // Инициализация таймера обратного отсчета для акционного блока
     initPromoTimer();
 });
 
-// Функционал показа/скрытия дополнительных услуг в прайс-листе
+// Показать/скрыть дополнительные услуги в прайс-листе
 function initPricingToggle() {
-    const showMoreBtn = document.getElementById('showMoreBtn');
-    const hiddenRows = document.querySelectorAll('.pricing__row-hidden');
+    const btn = document.getElementById('showMoreBtn');
+    const rows = document.querySelectorAll('.pricing__row-hidden');
     
-    if (showMoreBtn && hiddenRows.length > 0) {
-        let isExpanded = false;
-        
-        showMoreBtn.addEventListener('click', function() {
-            if (!isExpanded) {
-                // Показать скрытые строки
-                hiddenRows.forEach(row => {
-                    row.style.display = 'table-row';
-                });
-                
-                // Изменить текст и иконку кнопки
-                showMoreBtn.innerHTML = '<i class="ri-subtract-line"></i> Скрыть';
-                isExpanded = true;
-            } else {
-                // Скрыть строки
-                hiddenRows.forEach(row => {
-                    row.style.display = 'none';
-                });
-                
-                // Вернуть исходный текст и иконку
-                showMoreBtn.innerHTML = '<i class="ri-add-line"></i> Показать еще';
-                isExpanded = false;
-            }
-        });
-    }
+    if (!btn || !rows.length) return;
+    
+    let expanded = false;
+    btn.addEventListener('click', () => {
+        expanded = !expanded;
+        rows.forEach(row => row.style.display = expanded ? 'table-row' : 'none');
+        btn.innerHTML = expanded 
+            ? '<i class="ri-subtract-line"></i> Скрыть'
+            : '<i class="ri-add-line"></i> Показать еще';
+    });
 }
 
-// Инициализация таймера обратного отсчета для акционного блока
+// Таймер обратного отсчета до конца дня
 function initPromoTimer() {
-    const hoursElement = document.getElementById('hours');
-    const minutesElement = document.getElementById('minutes');
-    const secondsElement = document.getElementById('seconds');
+    const elements = {
+        hours: document.getElementById('hours'),
+        minutes: document.getElementById('minutes'),
+        seconds: document.getElementById('seconds')
+    };
     
-    if (!hoursElement || !minutesElement || !secondsElement) {
-        return;
-    }
+    if (!Object.values(elements).every(Boolean)) return;
     
-    // Запуск таймера
-    startPromoCountdown();
-    
-    function startPromoCountdown() {
-        // Получить текущую дату и время
-        const now = new Date();
-        
-        // Установить окончание дня (23:59:59)
+    const updateTimer = () => {
         const endOfDay = new Date();
         endOfDay.setHours(23, 59, 59, 999);
+        const timeLeft = endOfDay.getTime() - Date.now();
         
-        // Обновление таймера каждую секунду
-        const timer = setInterval(function() {
-            const currentTime = new Date().getTime();
-            const timeLeft = endOfDay.getTime() - currentTime;
-            
-            // Если время истекло, перезапустить на следующий день
-            if (timeLeft < 0) {
-                clearInterval(timer);
-                // Перезапуск через секунду для следующего дня
-                setTimeout(startPromoCountdown, 1000);
-                return;
-            }
-            
-            // Рассчитать часы, минуты и секунды
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            
-            // Обновить отображение
-            hoursElement.textContent = hours.toString().padStart(2, '0');
-            minutesElement.textContent = minutes.toString().padStart(2, '0');
-            secondsElement.textContent = seconds.toString().padStart(2, '0');
-        }, 1000);
-    }
+        if (timeLeft < 0) {
+            setTimeout(updateTimer, 1000);
+            return;
+        }
+        
+        const hours = Math.floor(timeLeft / 3600000);
+        const minutes = Math.floor((timeLeft % 3600000) / 60000);
+        const seconds = Math.floor((timeLeft % 60000) / 1000);
+        
+        elements.hours.textContent = hours.toString().padStart(2, '0');
+        elements.minutes.textContent = minutes.toString().padStart(2, '0');
+        elements.seconds.textContent = seconds.toString().padStart(2, '0');
+    };
+    
+    updateTimer();
+    setInterval(updateTimer, 1000);
 }
 
-// Smooth scroll function
-function smoothScroll(target) {
-    const element = document.querySelector(target);
-    if (element) {
-        element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
-}
-
-// Reviews carousel auto-scroll (будет добавлено позднее)
-function initReviewsCarousel() {
-    // Функционал для автопрокрутки отзывов
-}
+// Плавная прокрутка к элементу
+const smoothScroll = target => {
+    document.querySelector(target)?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+};

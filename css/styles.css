@@ -1527,4 +1527,237 @@ body {
     }
 }
 
+/* ========================================
+   Финальный CTA блок
+========================================= */
+
+.final-cta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    padding: var(--space-24) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.6;
+}
+
+.final-cta__content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.final-cta__header {
+    margin-bottom: var(--space-12);
+}
+
+.final-cta__title {
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-bold);
+    color: white;
+    margin-bottom: var(--space-6);
+    line-height: var(--line-height-tight);
+}
+
+.final-cta__subtitle {
+    font-size: var(--font-size-2xl);
+    color: rgba(255, 255, 255, 0.95);
+    line-height: var(--line-height-relaxed);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.final-cta__features {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-12);
+    margin-bottom: var(--space-16);
+    flex-wrap: wrap;
+}
+
+.final-cta__feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: white;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+}
+
+.final-cta__feature i {
+    font-size: var(--font-size-2xl);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.final-cta__action {
+    margin-bottom: var(--space-12);
+}
+
+.btn--cta {
+    background: white;
+    color: var(--color-primary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    padding: var(--space-6) var(--space-12);
+    border-radius: var(--radius-2xl);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    min-width: 320px;
+}
+
+.btn--cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    background: #f8f8f8;
+}
+
+.btn--cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn--cta:hover::before {
+    left: 100%;
+}
+
+.final-cta__btn {
+    animation: pulse-cta 2s infinite;
+}
+
+.final-cta__btn-text {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+}
+
+.final-cta__btn-subtext {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary-dark);
+    opacity: 0.8;
+}
+
+.final-cta__phone {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: var(--space-8);
+}
+
+.final-cta__phone-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: white;
+    text-decoration: none;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-4);
+    transition: color 0.3s ease;
+}
+
+.final-cta__phone-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.final-cta__phone-link i {
+    font-size: var(--font-size-3xl);
+}
+
+.final-cta__schedule {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+/* Анимация пульсации для CTA кнопки */
+@keyframes pulse-cta {
+    0% {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 0 15px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 992px) {
+    .final-cta {
+        padding: var(--space-20) 0;
+    }
+    
+    .final-cta__title {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .final-cta__subtitle {
+        font-size: var(--font-size-xl);
+    }
+    
+    .final-cta__features {
+        gap: var(--space-8);
+    }
+    
+    .final-cta__phone-link {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 576px) {
+    .final-cta {
+        padding: var(--space-16) 0;
+    }
+    
+    .final-cta__title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .final-cta__subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    .final-cta__features {
+        flex-direction: column;
+        gap: var(--space-4);
+        align-items: center;
+    }
+    
+    .btn--cta {
+        min-width: 280px;
+        padding: var(--space-5) var(--space-8);
+    }
+    
+    .final-cta__btn-text {
+        font-size: var(--font-size-lg);
+    }
+    
+    .final-cta__phone-link {
+        font-size: var(--font-size-xl);
+    }
+}
+
 /* Модальное окно #forma уже готово в Tilda */

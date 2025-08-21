@@ -6,10 +6,6 @@
   --color-primary-light: #10B981;  /* Светло-зеленый */
   --color-primary-pale: #A7F3D0;   /* Бледно-зеленый для фонов */
   
-  /* Accent Colors - Оранжевые тона для срочности и акций */
-  --color-accent: #EA580C;         /* Оранжевый для акций */
-  --color-accent-light: #FB923C;   /* Светло-оранжевый */
-  --color-warning: #F59E0B;        /* Желтый для внимания */
   
   /* Neutral Colors - Серые тона для текста и фонов */
   --color-text-primary: #1F2937;   /* Темно-серый текст */
@@ -24,7 +20,6 @@
   --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   --gradient-cta: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   --gradient-hero: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, #DC2626 100%);
   
   /* Font Family */
   --font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -721,7 +716,7 @@ body {
 
 .promo {
     padding: var(--space-20) 0;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-warning) 100%);
+    background: var(--gradient-primary);
     color: white;
     text-align: center;
     position: relative;
@@ -820,7 +815,7 @@ body {
     font-size: var(--font-size-xl);
     padding: var(--space-6) var(--space-12);
     background: white;
-    color: var(--color-accent);
+    color: var(--color-primary);
     border: none;
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
     animation: pulse 2s infinite;
@@ -828,13 +823,13 @@ body {
 
 .promo__btn:hover {
     background: var(--color-bg-primary);
-    color: var(--color-accent);
+    color: var(--color-primary);
     transform: translateY(-3px);
     box-shadow: 0 12px 40px rgba(0,0,0,0.3);
 }
 
 .promo__btn i {
-    color: var(--color-warning);
+    color: var(--color-primary-light);
 }
 
 @keyframes pulse {

@@ -2832,14 +2832,33 @@ body {
         display: none;
     }
 
-    /* Уменьшаем размер кнопки на hero экране */
+    /* Кнопка на hero экране - полная ширина с центрированием */
+    .hero__cta {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
     .hero .btn--primary {
-        font-size: var(--font-size-base); /* Уменьшаем с lg до base */
-        padding: var(--space-3) var(--space-6); /* Уменьшаем отступы */
+        font-size: 14px; /* Устанавливаем точный размер */
+        width: 100%; /* Кнопка на всю ширину */
+        max-width: 300px; /* Ограничиваем максимальную ширину */
+        padding: var(--space-3) var(--space-4);
+        text-align: center;
+        justify-content: center;
     }
 
     .hero .btn--primary i {
-        font-size: var(--font-size-lg); /* Уменьшаем иконку с xl до lg */
+        font-size: 14px; /* Иконка того же размера что и текст */
+    }
+
+    /* Все кнопки на Mobile Small - 14px шрифт */
+    .btn--primary {
+        font-size: 14px !important;
+    }
+    
+    .btn--primary i {
+        font-size: 14px !important;
     }
 
     /* Обновляем body padding для уменьшенного header */

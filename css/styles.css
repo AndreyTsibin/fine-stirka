@@ -2800,7 +2800,7 @@ body {
     }
     
     .hero__title {
-        font-size: var(--font-size-xl); /* Еще меньше для малых экранов */
+        font-size: var(--font-size-4xl); /* Увеличиваем размер H1 */
         margin-bottom: var(--space-3);
         line-height: 1.1;
     }
@@ -2843,7 +2843,7 @@ body {
     }
     
     .repairs__title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-4xl);
         margin-bottom: var(--space-2);
     }
     
@@ -2869,7 +2869,7 @@ body {
     }
     
     .advantages__title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-4xl);
         margin-bottom: var(--space-2);
     }
     
@@ -2905,7 +2905,7 @@ body {
     }
     
     .pricing__title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-4xl);
         margin-bottom: var(--space-2);
     }
     
@@ -2939,7 +2939,7 @@ body {
     }
     
     .process__title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-4xl);
         margin-bottom: var(--space-2);
     }
     
@@ -2953,7 +2953,7 @@ body {
     }
     
     .masters__title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-4xl);
         margin-bottom: var(--space-2);
     }
     
@@ -2972,7 +2972,7 @@ body {
     }
     
     .testimonials__title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-4xl);
         margin-bottom: var(--space-2);
     }
     
@@ -2991,7 +2991,7 @@ body {
     }
     
     .final-cta__title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-4xl);
     }
     
     .final-cta__subtitle {

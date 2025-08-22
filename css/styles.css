@@ -2490,10 +2490,11 @@ body {
     }
     
     .hero__content {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: var(--space-8);
-        justify-items: center; /* Центрируем содержимое по горизонтали */
-        text-align: center; /* Центрируем текст */
+        text-align: center;
         width: 100%;
     }
     

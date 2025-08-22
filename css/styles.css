@@ -1862,6 +1862,224 @@ body {
         padding-left: var(--space-6);
         padding-right: var(--space-6);
     }
+
+    /* Header адаптация для Desktop Small */
+    .header {
+        height: 72px; /* Уменьшаем высоту header */
+    }
+    
+    .header__content {
+        height: 72px;
+        gap: var(--space-4); /* Уменьшаем gap между элементами */
+    }
+    
+    .header__logo h2 {
+        font-size: var(--font-size-xl); /* Уменьшаем размер логотипа */
+    }
+    
+    .header__logo-icon {
+        width: 28px;
+        height: 28px; /* Слегка уменьшаем иконку */
+    }
+    
+    .header__nav-list {
+        gap: var(--space-5); /* Уменьшаем gap в навигации */
+    }
+    
+    .header__phone a {
+        font-size: var(--font-size-base); /* Уменьшаем размер телефона */
+    }
+    
+    .header__schedule {
+        font-size: var(--font-size-xs); /* Уменьшаем размер расписания */
+    }
+    
+    /* Оптимизируем CTA кнопку */
+    .btn {
+        padding: var(--space-2) var(--space-5);
+        font-size: var(--font-size-sm);
+    }
+
+    /* Hero Section адаптация для Desktop Small */
+    .hero {
+        padding: var(--space-20) 0; /* Уменьшаем padding секции */
+    }
+    
+    .hero__content {
+        gap: var(--space-12); /* Уменьшаем gap между колонками */
+    }
+    
+    .hero__title {
+        font-size: var(--font-size-4xl); /* Уменьшаем заголовок */
+        margin-bottom: var(--space-5);
+    }
+    
+    .hero__subtitle {
+        font-size: var(--font-size-lg); /* Уменьшаем подзаголовок */
+        margin-bottom: var(--space-8);
+    }
+    
+    .hero__features {
+        gap: var(--space-2); /* Уменьшаем gap между УТП */
+        margin-bottom: var(--space-8);
+    }
+    
+    .hero__feature i {
+        font-size: var(--font-size-lg); /* Уменьшаем иконки УТП */
+    }
+    
+    .hero__feature span {
+        font-size: var(--font-size-base); /* Уменьшаем текст УТП */
+    }
+
+    /* Обновляем body padding для уменьшенного header */
+    body {
+        padding-top: 72px;
+    }
+
+    /* Repairs Section адаптация для Desktop Small */
+    .repairs {
+        padding: var(--space-16) 0; /* Уменьшаем padding секции */
+    }
+    
+    .repairs__header {
+        margin-bottom: var(--space-12); /* Уменьшаем отступ заголовка */
+    }
+    
+    .repairs__title {
+        font-size: var(--font-size-3xl); /* Уменьшаем заголовок */
+        margin-bottom: var(--space-3);
+    }
+    
+    .repairs__subtitle {
+        font-size: var(--font-size-lg); /* Уменьшаем подзаголовок */
+    }
+    
+    .repairs__grid {
+        gap: var(--space-5); /* Уменьшаем gap между карточками */
+        margin-top: var(--space-10);
+    }
+    
+    .repairs__card {
+        padding: var(--space-6); /* Уменьшаем padding карточек */
+        min-height: 160px; /* Уменьшаем минимальную высоту */
+    }
+
+    /* Advantages Section адаптация для Desktop Small */
+    .advantages {
+        padding: var(--space-16) 0;
+    }
+    
+    .advantages__title {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--space-3);
+    }
+    
+    .advantages__subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    .advantages__grid {
+        gap: var(--space-5);
+        margin-top: var(--space-10);
+    }
+    
+    .advantages__card {
+        padding: var(--space-6);
+    }
+
+    /* Pricing Section адаптация для Desktop Small */
+    .pricing {
+        padding: var(--space-16) 0;
+    }
+    
+    .pricing__title {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--space-3);
+    }
+    
+    .pricing__subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Promo Section адаптация для Desktop Small */
+    .promo {
+        padding: var(--space-16) 0;
+    }
+    
+    .promo__title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .promo__subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Process Section адаптация для Desktop Small */
+    .process {
+        padding: var(--space-16) 0;
+    }
+    
+    .process__title {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--space-3);
+    }
+    
+    .process__subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Masters Section адаптация для Desktop Small */
+    .masters {
+        padding: var(--space-16) 0;
+    }
+    
+    .masters__title {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--space-3);
+    }
+    
+    .masters__subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    .masters__grid {
+        gap: var(--space-5);
+        margin-top: var(--space-10);
+    }
+
+    /* Reviews Section адаптация для Desktop Small */
+    .reviews {
+        padding: var(--space-16) 0;
+    }
+    
+    .reviews__title {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--space-3);
+    }
+    
+    .reviews__subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Final CTA Section адаптация для Desktop Small */
+    .final-cta {
+        padding: var(--space-16) 0;
+    }
+    
+    .final-cta__title {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--space-3);
+    }
+    
+    .final-cta__subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Footer адаптация для Desktop Small */
+    .footer {
+        padding: var(--space-16) 0 var(--space-8);
+    }
 }
 
 /* Tablet (640px - 960px) - Основные структурные изменения */

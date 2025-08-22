@@ -2917,6 +2917,7 @@ body {
     
     .repairs__grid {
         grid-template-columns: 1fr; /* Одна колонка на малых экранах */
+        gap: 2px;
         margin-top: var(--space-4);
     }
     

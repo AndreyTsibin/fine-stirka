@@ -2925,9 +2925,10 @@ body {
         min-height: 100px;
         padding: var(--space-3);
         font-size: var(--font-size-xs);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для выразительности */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         border-radius: var(--radius-lg);
         background: white;
+        gap: 2px;
     }
     
     /* Уменьшаем отступы внутри карточек ремонта */

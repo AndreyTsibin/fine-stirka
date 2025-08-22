@@ -82,15 +82,6 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  
-  /* Images */
-  --img-hero-master: url('../images/placeholder-img.jpg');
-  --img-master-1: url('../images/placeholder-img.jpg');
-  --img-master-2: url('../images/placeholder-img.jpg');
-  --img-master-3: url('../images/placeholder-img.jpg');
-  --img-washing-machine: url('../images/placeholder-img.jpg');
-  --img-tools: url('../images/placeholder-img.jpg');
-  --img-spare-parts: url('../images/placeholder-img.jpg');
 
   /* Breakpoints - Адаптивные точки перелома */
   --bp-mobile-small: 320px;   /* Малые мобильные */
@@ -121,6 +112,19 @@
   --font-size-h2-mobile: var(--font-size-xl);      /* 20px */
   --font-size-h2-tablet: var(--font-size-2xl);     /* 24px */
   --font-size-h2-desktop: var(--font-size-3xl);    /* 30px */
+  
+  /* Адаптивные размеры header */
+  --header-height-desktop: 80px;
+  --header-height-desktop-small: 72px;
+  --header-height-tablet: 64px;
+  --header-height-mobile: 56px;
+  --header-height-mobile-small: 52px;
+  
+  /* Адаптивные размеры иконок */
+  --icon-size-desktop: 32px;
+  --icon-size-desktop-small: 28px;
+  --icon-size-tablet: 24px;
+  --icon-size-mobile: 20px;
 }
 
 /* Reset and base styles */
@@ -417,14 +421,6 @@ body {
     gap: var(--space-2);
 }
 
-/* Кнопки в Hero секции - больше размер */
-.hero .btn--primary {
-    padding: var(--space-4) var(--space-8);
-    font-size: var(--font-size-lg);
-    box-shadow: var(--shadow-md);
-    gap: var(--space-3);
-}
-
 .btn--primary:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
@@ -483,11 +479,11 @@ body {
 /* УТП Features */
 .hero__features {
     display: flex;
-    flex-direction: row; /* Изменено с column на row для горизонтального расположения */
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: center; /* Выравниваем по вертикали */
-    flex-wrap: wrap; /* Позволяем перенос на мобильных */
-    gap: var(--space-6); /* Увеличиваем gap между УТП */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-6);
     margin-bottom: var(--space-10);
 }
 
@@ -525,7 +521,7 @@ body {
 
 .hero__master-img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
     border-radius: var(--radius-2xl);
     box-shadow: var(--shadow-lg);
@@ -669,13 +665,12 @@ body {
     margin: 0 auto;
 }
 
-/* Сетка карточек 1x4 (одна колонка) */
 .advantages__grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-8);
     margin-top: var(--space-12);
-    max-width: 600px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1006,29 +1001,6 @@ body {
 }
 
 /* Адаптивность для акционного блока */
-@media (max-width: 768px) {
-    .promo__title {
-        font-size: var(--font-size-3xl);
-    }
-    
-    .promo__timer {
-        gap: var(--space-2);
-    }
-    
-    .timer__item {
-        min-width: 80px;
-        padding: var(--space-4) var(--space-3);
-    }
-    
-    .timer__value {
-        font-size: var(--font-size-3xl);
-    }
-    
-    .promo__btn {
-        font-size: var(--font-size-lg);
-        padding: var(--space-5) var(--space-10);
-    }
-}
 
 
 
@@ -1097,6 +1069,7 @@ body {
     position: relative;
     z-index: 2;
     margin: 0 var(--space-6);
+    font-size: var(--font-size-lg);
 }
 
 .step__digit {
@@ -1167,72 +1140,6 @@ body {
     z-index: 1;
 }
 
-/* Адаптивность для этапов работы */
-@media (max-width: 768px) {
-    .step {
-        flex-direction: row !important;
-        text-align: left !important;
-    }
-    
-    .step__content {
-        text-align: left !important;
-    }
-    
-    .step__number {
-        width: 60px;
-        height: 60px;
-        margin: 0 var(--space-4) 0 0;
-    }
-    
-    .step__digit {
-        font-size: var(--text-lg);
-    }
-    
-    .step__icon {
-        font-size: var(--font-size-3xl);
-        margin-bottom: var(--space-2);
-    }
-    
-    .step:not(:last-child)::after {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .work-steps {
-        padding: var(--space-16) 0;
-    }
-    
-    .step {
-        margin-bottom: var(--space-8);
-    }
-    
-    .step__number {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .step__digit {
-        font-size: var(--text-base);
-    }
-    
-    .step__icon {
-        font-size: var(--font-size-2xl);
-        margin-bottom: var(--space-2);
-    }
-    
-    .step__content {
-        padding: var(--space-4) var(--space-6);
-    }
-    
-    .step__title {
-        font-size: var(--text-base);
-    }
-    
-    .step__description {
-        font-size: var(--text-sm);
-    }
-}
 
 /* ========================================
    Блок "Наши мастера"
@@ -1300,7 +1207,7 @@ body {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--color-primary);
+    border: 1px solid var(--color-primary);
     transition: all 0.3s ease;
 }
 
@@ -1348,47 +1255,6 @@ body {
     line-height: var(--line-height-relaxed);
 }
 
-/* Адаптивность для планшетов */
-@media (max-width: 992px) {
-    .masters {
-        padding: var(--space-16) 0;
-    }
-    
-    .masters__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-6);
-    }
-    
-    .masters__photo {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 576px) {
-    .masters {
-        padding: var(--space-12) 0;
-    }
-    
-    .masters__grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-6);
-    }
-    
-    .masters__card {
-        padding: var(--space-6);
-    }
-    
-    .masters__photo {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .masters__name {
-        font-size: var(--font-size-xl);
-    }
-}
 
 /* ========================================
    Блок отзывов
@@ -1562,57 +1428,6 @@ body {
     transform: scale(1.3);
 }
 
-/* Адаптивность для планшетов */
-@media (max-width: 992px) {
-    .testimonials {
-        padding: var(--space-16) 0;
-    }
-    
-    .testimonials__card {
-        padding: var(--space-8);
-    }
-    
-    .testimonials__text {
-        font-size: var(--font-size-base);
-    }
-    
-    .testimonials__nav--prev {
-        left: -50px;
-    }
-    
-    .testimonials__nav--next {
-        right: -50px;
-    }
-    
-    .testimonials__nav {
-        width: 40px;
-        height: 40px;
-        font-size: var(--font-size-lg);
-    }
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 576px) {
-    .testimonials {
-        padding: var(--space-12) 0;
-    }
-    
-    .testimonials__card {
-        padding: var(--space-6);
-    }
-    
-    .testimonials__text {
-        font-size: var(--font-size-sm);
-    }
-    
-    .testimonials__name {
-        font-size: var(--font-size-lg);
-    }
-    
-    .testimonials__nav {
-        display: none;
-    }
-}
 
 /* ========================================
    Финальный CTA блок
@@ -1740,55 +1555,6 @@ body {
     }
 }
 
-/* Адаптивность для планшетов */
-@media (max-width: 992px) {
-    .final-cta {
-        padding: var(--space-20) 0;
-    }
-    
-    .final-cta__title {
-        font-size: var(--font-size-3xl);
-    }
-    
-    .final-cta__subtitle {
-        font-size: var(--font-size-xl);
-    }
-    
-    .final-cta__features {
-        gap: var(--space-8);
-    }
-    
-    .final-cta__phone-btn {
-        font-size: var(--font-size-lg);
-        padding: var(--space-5) var(--space-10);
-    }
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 576px) {
-    .final-cta {
-        padding: var(--space-16) 0;
-    }
-    
-    .final-cta__title {
-        font-size: var(--font-size-2xl);
-    }
-    
-    .final-cta__subtitle {
-        font-size: var(--font-size-lg);
-    }
-    
-    .final-cta__features {
-        flex-direction: column;
-        gap: var(--space-4);
-        align-items: center;
-    }
-    
-    .final-cta__phone-btn {
-        font-size: var(--font-size-lg);
-        padding: var(--space-5) var(--space-10);
-    }
-}
 
 /* ========================================
    Footer
@@ -1925,46 +1691,6 @@ body {
 }
 
 /* Адаптивность для планшетов */
-@media (max-width: 992px) {
-    .footer {
-        padding: var(--space-12) 0 var(--space-6);
-    }
-    
-    .footer__main {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-8);
-    }
-    
-    .footer__company {
-        grid-column: 1 / -1;
-        max-width: none;
-        margin-bottom: var(--space-4);
-    }
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 576px) {
-    .footer {
-        padding: var(--space-10) 0 var(--space-6);
-    }
-    
-    .footer__main {
-        grid-template-columns: 1fr;
-        gap: var(--space-6);
-        margin-bottom: var(--space-8);
-        padding-bottom: var(--space-8);
-    }
-    
-    .footer__bottom {
-        flex-direction: column;
-        gap: var(--space-4);
-        text-align: center;
-    }
-    
-    .footer__company-details p {
-        margin-bottom: var(--space-1);
-    }
-}
 
 /* Модальное окно #forma уже готово в Tilda */
 
@@ -1988,35 +1714,38 @@ body {
         padding-right: var(--space-6);
     }
 
-    /* Header адаптация для Desktop Small */
     .header {
-        height: 72px; /* Уменьшаем высоту header */
+        height: var(--header-height-desktop-small);
     }
     
     .header__content {
-        height: 72px;
-        gap: var(--space-4); /* Уменьшаем gap между элементами */
+        height: var(--header-height-desktop-small);
+        gap: var(--space-4);
+    }
+    
+    .header__contacts {
+        gap: 0px;
     }
     
     .header__logo h2 {
-        font-size: var(--font-size-xl); /* Уменьшаем размер логотипа */
+        font-size: var(--font-size-xl);
     }
     
     .header__logo-icon {
-        width: 28px;
-        height: 28px; /* Слегка уменьшаем иконку */
+        width: var(--icon-size-desktop-small);
+        height: var(--icon-size-desktop-small);
     }
     
     .header__nav-list {
-        gap: var(--space-5); /* Уменьшаем gap в навигации */
+        gap: var(--space-5); 
     }
     
     .header__phone a {
-        font-size: var(--font-size-base); /* Уменьшаем размер телефона */
+        font-size: var(--font-size-base); 
     }
     
     .header__schedule {
-        font-size: var(--font-size-xs); /* Уменьшаем размер расписания */
+        font-size: var(--font-size-xs); 
     }
     
     /* Оптимизируем CTA кнопку */
@@ -2027,57 +1756,56 @@ body {
 
     /* Hero Section адаптация для Desktop Small */
     .hero {
-        padding: var(--space-20) 0; /* Уменьшаем padding секции */
+        padding: var(--space-20) 0; 
     }
     
     .hero__content {
-        gap: var(--space-12); /* Уменьшаем gap между колонками */
+        gap: var(--space-12); 
     }
     
     .hero__title {
-        font-size: var(--font-size-4xl); /* Уменьшаем заголовок */
+        font-size: var(--font-size-4xl); 
         margin-bottom: var(--space-5);
     }
     
     .hero__subtitle {
-        font-size: var(--font-size-lg); /* Уменьшаем подзаголовок */
+        font-size: var(--font-size-lg); 
         margin-bottom: var(--space-8);
     }
     
     .hero__features {
-        gap: var(--space-5); /* Оптимальный gap для Desktop Small */
+        gap: var(--space-5); 
         margin-bottom: var(--space-8);
     }
     
     .hero__feature i {
-        font-size: var(--font-size-lg); /* Уменьшаем иконки УТП */
+        font-size: var(--font-size-lg); 
     }
     
     .hero__feature span {
-        font-size: var(--font-size-base); /* Уменьшаем текст УТП */
+        font-size: var(--font-size-base);
     }
 
-    /* Обновляем body padding для уменьшенного header */
     body {
         padding-top: 72px;
     }
 
     /* Repairs Section адаптация для Desktop Small */
     .repairs {
-        padding: var(--space-16) 0; /* Уменьшаем padding секции */
+        padding: var(--space-16) 0; 
     }
     
     .repairs__header {
-        margin-bottom: var(--space-12); /* Уменьшаем отступ заголовка */
+        margin-bottom: var(--space-12); 
     }
     
     .repairs__title {
-        font-size: var(--font-size-3xl); /* Уменьшаем заголовок */
+        font-size: var(--font-size-3xl); 
         margin-bottom: var(--space-3);
     }
     
     .repairs__subtitle {
-        font-size: var(--font-size-lg); /* Уменьшаем подзаголовок */
+        font-size: var(--font-size-lg); 
     }
     
     .repairs__grid {
@@ -2090,7 +1818,6 @@ body {
         min-height: 160px; /* Уменьшаем минимальную высоту */
     }
 
-    /* Advantages Section адаптация для Desktop Small */
     .advantages {
         padding: var(--space-16) 0;
     }
@@ -2113,7 +1840,6 @@ body {
         padding: var(--space-6);
     }
 
-    /* Pricing Section адаптация для Desktop Small */
     .pricing {
         padding: var(--space-16) 0;
     }
@@ -2201,6 +1927,13 @@ body {
         font-size: var(--font-size-lg);
     }
 
+    .final-cta__header {
+        margin-bottom: 30px;
+    }
+
+    .final-cta__features {
+        margin-bottom: 30px;
+    }
     /* Footer адаптация для Desktop Small */
     .footer {
         padding: var(--space-16) 0 var(--space-8);
@@ -2225,50 +1958,46 @@ body {
 
     /* Header адаптация для Tablet - компактный layout */
     .header {
-        height: 64px; /* Дальнейшее уменьшение высоты */
+        height: var(--header-height-tablet);
     }
     
     .header__content {
-        height: 64px;
-        gap: var(--space-3); /* Уменьшаем gap между элементами */
-        flex-wrap: wrap; /* Позволяем перенос элементов если нужно */
+        height: var(--header-height-tablet);
+        gap: var(--space-3);
+        flex-wrap: wrap;
     }
     
     .header__logo h2 {
-        font-size: var(--font-size-lg); /* Еще больше уменьшаем логотип */
+        font-size: var(--font-size-lg);
     }
     
     .header__logo-icon {
-        width: 24px;
-        height: 24px; /* Уменьшаем иконку */
+        width: var(--icon-size-tablet);
+        height: var(--icon-size-tablet);
     }
     
-    /* Скрываем навигацию на планшетах или делаем компактной */
     .header__nav-list {
         gap: var(--space-3);
-        font-size: var(--font-size-sm); /* Уменьшаем текст навигации */
+        font-size: var(--font-size-sm); 
     }
     
-    /* Оптимизируем контакты для планшета */
     .header__contacts {
         gap: var(--space-1);
     }
     
     .header__phone a {
-        font-size: var(--font-size-sm); /* Уменьшаем телефон */
+        font-size: var(--font-size-sm); 
     }
     
     .header__schedule {
-        font-size: var(--font-size-xs); /* Мелкий размер расписания */
+        font-size: var(--font-size-xs); 
     }
     
-    /* Компактная CTA кнопка для планшета */
     .btn {
         padding: var(--space-2) var(--space-4);
-        font-size: var(--font-size-xs);
+        font-size: var(--font-size-sm);
     }
 
-    /* Hero Section - возможный переход к одноколоночному layout */
     .hero {
         padding: var(--space-16) 0;
     }
@@ -2280,15 +2009,30 @@ body {
     }
     
     .hero__title {
-        font-size: var(--font-size-3xl); /* Используем tablet размер */
+        font-size: 42px;
         margin-bottom: var(--space-4);
+        text-align: left;
     }
     
     .hero__subtitle {
-        font-size: var(--font-size-base);
+        font-size: 22px;
         margin-bottom: var(--space-6);
+        text-align: left;
     }
     
+    .hero__cta {
+        margin-top: var(--space-8);
+        display: flex;
+    }
+
+    .hero__cta .btn {
+        padding: 14px 30px;
+    }
+
+    .hero__image {
+        display: none;
+    }
+
     .hero__features {
         margin-bottom: var(--space-6);
         gap: var(--space-4); /* Уменьшаем gap для планшета */
@@ -2371,6 +2115,11 @@ body {
         max-width: 300px;
         justify-self: center;
     }
+    
+    .masters__photo {
+        width: 100px;
+        height: 100px;
+    }
 
     /* Testimonials Section - адаптация размеров карточек и навигации */
     .testimonials {
@@ -2379,28 +2128,108 @@ body {
     
     .testimonials__card {
         max-width: none; /* Убираем ограничение ширины */
-        padding: var(--space-5);
+        padding: var(--space-8);
+    }
+    
+    .testimonials__text {
+        font-size: var(--font-size-base);
+    }
+    
+    .testimonials__nav--prev {
+        left: -50px;
+    }
+    
+    .testimonials__nav--next {
+        right: -50px;
     }
     
     /* Скрываем стрелочки на планшетах, оставляем только точки */
     .testimonials__nav {
         display: none;
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-lg);
     }
 
-    /* Final CTA Section - корректировка spacing */
+    /* Promo Section - адаптация для планшетов */
+    .promo__title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .promo__timer {
+        gap: var(--space-2);
+    }
+    
+    .timer__item {
+        min-width: 80px;
+        padding: var(--space-4) var(--space-3);
+    }
+    
+    .timer__value {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .promo__btn {
+        font-size: var(--font-size-lg);
+        padding: var(--space-5) var(--space-10);
+    }
+
+    /* Work Steps Section - адаптация для планшетов */
+    .step {
+        flex-direction: row;
+        text-align: left;
+    }
+    
+    .step__content {
+        text-align: left;
+    }
+    
+    .step__number {
+        width: 60px;
+        height: 60px;
+        margin: 0 var(--space-4) 0 0;
+    }
+    
+    .step__digit {
+        font-size: var(--text-lg);
+    }
+    
+    .step__icon {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--space-2);
+    }
+    
+    .step:not(:last-child)::after {
+        display: none;
+    }
+
+    /* Final CTA Section - адаптация для планшетов */
     .final-cta {
-        padding: var(--space-12) 0;
+        padding: var(--space-20) 0;
+    }
+    
+    .final-cta__title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .final-cta__subtitle {
+        font-size: var(--font-size-xl);
     }
     
     .final-cta__features {
         grid-template-columns: 1fr; /* Вертикальный layout УТП */
-        gap: var(--space-4);
+        gap: var(--space-8);
         margin-top: var(--space-6);
     }
+    
+    .final-cta__phone-btn {
+        font-size: var(--font-size-lg);
+        padding: var(--space-5) var(--space-10);
+    }
 
-    /* Footer - реорганизация блоков */
+    /* Footer - реорганизация блоков для планшетов */
     .footer {
-        padding: var(--space-12) 0 var(--space-6);
+        padding: var(--space-16) 0 var(--space-8);
     }
     
     .footer__main {
@@ -2432,22 +2261,22 @@ body {
 
     /* Header - мобильная навигация и компактный layout */
     .header {
-        height: 56px; /* Еще более компактная высота для мобильного */
+        height: var(--header-height-mobile);
     }
     
     .header__content {
-        height: 56px;
+        height: var(--header-height-mobile);
         gap: var(--space-2);
         position: relative;
     }
     
     .header__logo h2 {
-        font-size: var(--font-size-base); /* Компактный логотип */
+        font-size: var(--font-size-base);
     }
     
     .header__logo-icon {
-        width: 20px;
-        height: 20px;
+        width: var(--icon-size-mobile);
+        height: var(--icon-size-mobile);
     }
     
     /* Скрываем десктопную навигацию и контакты, показываем мобильное меню */
@@ -2628,6 +2457,41 @@ body {
         font-size: var(--font-size-base) !important;
     }
 
+    /* Work Steps Section - мобильная адаптация */
+    .work-steps {
+        padding: var(--space-16) 0;
+    }
+    
+    .step {
+        margin-bottom: var(--space-8);
+    }
+    
+    .step__number {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .step__digit {
+        font-size: var(--text-base);
+    }
+    
+    .step__icon {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--space-2);
+    }
+    
+    .step__content {
+        padding: var(--space-4) var(--space-6);
+    }
+    
+    .step__title {
+        font-size: var(--text-base);
+    }
+    
+    .step__description {
+        font-size: var(--text-sm);
+    }
+
     /* Process Section - вертикальный timeline */
     .process {
         padding: var(--space-10) 0;
@@ -2657,8 +2521,21 @@ body {
     
     .masters__grid {
         grid-template-columns: 1fr;
-        gap: var(--space-4);
+        gap: var(--space-6);
         margin-top: var(--space-6);
+    }
+    
+    .masters__card {
+        padding: var(--space-6);
+    }
+    
+    .masters__photo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .masters__name {
+        font-size: var(--font-size-xl);
     }
 
     /* Testimonials Section - одна карточка с навигацией */
@@ -2675,32 +2552,50 @@ body {
     }
     
     .testimonials__card {
-        padding: var(--space-4);
+        padding: var(--space-6);
         font-size: var(--font-size-sm);
     }
+    
+    .testimonials__text {
+        font-size: var(--font-size-sm);
+    }
+    
+    .testimonials__name {
+        font-size: var(--font-size-lg);
+    }
+    
+    .testimonials__nav {
+        display: none;
+    }
 
-    /* Final CTA Section - вертикальный layout */
+    /* Final CTA Section - мобильная адаптация */
     .final-cta {
-        padding: var(--space-10) 0;
+        padding: var(--space-16) 0;
     }
     
     .final-cta__title {
-        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 */
+        font-size: var(--font-size-2xl);
     }
     
     .final-cta__subtitle {
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-lg);
     }
     
     .final-cta__features {
-        grid-template-columns: 1fr;
-        gap: var(--space-3);
+        flex-direction: column;
+        gap: var(--space-4);
+        align-items: center;
         margin-top: var(--space-4);
     }
+    
+    .final-cta__phone-btn {
+        font-size: var(--font-size-lg);
+        padding: var(--space-5) var(--space-10);
+    }
 
-    /* Footer - вертикальный layout блоков */
+    /* Footer - мобильная адаптация */
     .footer {
-        padding: var(--space-10) 0 var(--space-6);
+        padding: var(--space-12) 0 var(--space-6);
     }
     
     .footer__main {
@@ -2730,10 +2625,22 @@ body {
         --font-size-h2: calc(var(--font-size-h2-mobile) - 0.125rem);
     }
     
+    /* Общие настройки для малых экранов */
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        overflow-x: hidden;
+        padding-top: 52px;
+    }
+    
     .container {
+        width: 100%;
         max-width: 100%;
         padding-left: var(--space-4);
         padding-right: var(--space-4);
+        overflow-x: hidden;
     }
 
     /* Header - минимальный layout для малых экранов */
@@ -2741,10 +2648,6 @@ body {
         height: 52px; /* Еще более компактная высота */
     }
     
-    .header__content {
-        height: 52px;
-        gap: var(--space-1);
-    }
     
     .header__logo h2 {
         font-size: var(--font-size-sm); /* Очень компактный логотип */
@@ -2774,11 +2677,12 @@ body {
     }
     
     .header__content {
+        height: 52px;
+        gap: var(--space-1);
         justify-content: space-between;
     }
 
     /* Центрируем все заголовки и контент в мобильной версии */
-    .hero__text,
     .repairs__header,
     .advantages__header,
     .pricing__header,
@@ -2806,7 +2710,7 @@ body {
 
     /* Hero Section - оптимизация для малых экранов */
     .hero {
-        padding: var(--space-10) 0;
+        padding: 50px 0px;
     }
     
     .hero__content {
@@ -2822,11 +2726,13 @@ body {
         font-size: 28px; /* Оптимальный размер H1 для малых экранов */
         margin-bottom: var(--space-3);
         line-height: 1.1;
+        text-align: left;
     }
     
     .hero__subtitle {
-        font-size: var(--font-size-xs);
+        font-size: 14px;
         margin-bottom: var(--space-4);
+        text-align: left;
     }
     
     .hero__features {
@@ -2843,7 +2749,7 @@ body {
     }
     
     .hero__feature span {
-        font-size: var(--font-size-xs);
+        font-size: 14px;
     }
     
     /* Скрываем hero изображение на малых мобильных */
@@ -2859,51 +2765,22 @@ body {
     }
     
     .hero .btn--primary {
-        font-size: 14px; /* Устанавливаем точный размер */
-        width: 100%; /* Кнопка на всю ширину */
-        max-width: 300px; /* Ограничиваем максимальную ширину */
+        width: 100%;
         padding: var(--space-3) var(--space-4);
         text-align: center;
         justify-content: center;
     }
 
-    .hero .btn--primary i {
-        font-size: 14px; /* Иконка того же размера что и текст */
-    }
-
     /* Все кнопки на Mobile Small - 14px шрифт */
-    .btn--primary {
-        font-size: 14px !important;
-    }
-    
+    .btn--primary,
     .btn--primary i {
-        font-size: 14px !important;
+        font-size: 14px;
     }
 
-    /* Общие исправления для Mobile Small */
-    * {
-        box-sizing: border-box;
-    }
-    
-    /* Предотвращаем горизонтальный скролл */
-    body {
-        overflow-x: hidden;
-    }
-    
-    .container {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    /* Обновляем body padding для уменьшенного header */
-    body {
-        padding-top: 52px;
-    }
 
     /* Repairs Section - одноколоночная сетка для критически малых экранов */
     .repairs {
-        padding: var(--space-8) 0;
+        padding: 50px 0;
     }
     
     .repairs__title {
@@ -2917,8 +2794,9 @@ body {
     
     .repairs__grid {
         grid-template-columns: 1fr; /* Одна колонка на малых экранах */
-        gap: 2px;
+        gap: 10px;
         margin-top: var(--space-4);
+        padding-bottom: 20px;
     }
     
     .repairs__card {
@@ -2931,7 +2809,12 @@ body {
         gap: 2px;
     }
     
-    /* Уменьшаем отступы внутри карточек ремонта */
+    .repairs__card-price {
+        font-size: 16px;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+    }
+
     .repairs__card .repair-card__title {
         margin-bottom: var(--space-1); /* Уменьшаем отступ после заголовка */
     }
@@ -2946,19 +2829,19 @@ body {
     
     /* Repairs Cards - унификация размеров заголовков */
     .repair-card__title {
-        font-size: 16px !important; /* Единый размер для заголовков карточек */
+        font-size: 16px;
         line-height: 1.2;
         margin-bottom: var(--space-2);
     }
     
     .repair-card__price {
-        font-size: 18px !important; /* Цена немного больше заголовка */
+        font-size: 18px;
         font-weight: var(--font-weight-bold);
     }
 
     /* Advantages Section - компактные карточки */
     .advantages {
-        padding: var(--space-8) 0;
+        padding: 50px 0;
     }
     
     .advantages__title {
@@ -2973,6 +2856,7 @@ body {
     .advantages__grid {
         margin-top: var(--space-4);
         gap: var(--space-2);
+        padding-bottom: 20px;
     }
     
     .advantages__card {
@@ -2992,9 +2876,14 @@ body {
         margin-bottom: var(--space-3);
     }
 
+    .work-steps {
+        background: var(--bg-light);
+        padding: 50px 0;
+    }
+
     /* Pricing Section - карточный дизайн вместо таблицы */
     .pricing {
-        padding: var(--space-8) 0;
+        padding: 50px 0;
     }
     
     .pricing__title {
@@ -3010,6 +2899,8 @@ body {
     .pricing__table-wrapper {
         overflow-x: visible;
         width: 100%;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
     }
     
     .pricing__table {
@@ -3019,7 +2910,7 @@ body {
     }
     
     .pricing__table td:first-child {
-        font-size: 11px; /* Еще меньше для названий услуг */
+        font-size: 14px; /* Еще меньше для названий услуг */
         padding: var(--space-2);
         width: 70%; /* Больше места для названий */
         word-wrap: break-word;
@@ -3031,6 +2922,48 @@ body {
         text-align: right;
         width: 30%; /* Меньше места для цен */
         padding: var(--space-2);
+    }
+
+    .pricing__table thead th {
+        background: var(--color-primary);
+        color: white;
+        padding: 10px 10px;
+        text-align: left;
+        font-weight: var(
+        --font-weight-bold);
+        font-size: 14px;
+    }
+
+    .btn--secondary {
+        background: white;
+        color: var(--color-primary);
+        border: 2px solid var(--color-primary);
+        padding: 10px 30px;
+        font-size: 14px;
+        font-weight: var(--font-weight-semibold);
+        border-radius: var(--radius-full);
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        transition: all 0.3s ease;
+    }
+
+    .promo {
+        padding: 50px 0;
+        background: var(--gradient-primary);
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+        overflow-x: visible;
+        padding-bottom: 20px;
     }
 
     /* Process Section - упрощенный вертикальный timeline */
@@ -3049,7 +2982,7 @@ body {
 
     /* Masters Section - компактные карточки */
     .masters {
-        padding: var(--space-8) 0;
+        padding: 50px 0;
     }
     
     .masters__title {
@@ -3063,12 +2996,25 @@ body {
     
     .masters__grid {
         margin-top: var(--space-4);
-        gap: var(--space-2);
+        gap: 10px;
+    }
+
+    .step {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        position: relative;
+        flex-direction: column;
+    }
+
+    .work-steps__header {
+        text-align: center;
+        margin-bottom: 30px;
     }
 
     /* Testimonials Section - компактная карточка с точечной навигацией */
     .testimonials {
-        padding: var(--space-8) 0;
+        padding: 50px 0;
     }
     
     .testimonials__title {
@@ -3085,9 +3031,13 @@ body {
         font-size: var(--font-size-xs);
     }
 
+    .testimonials__nav {
+        display: none;
+    }
+
     /* Final CTA Section - компактный дизайн */
     .final-cta {
-        padding: var(--space-8) 0;
+        padding: 50px 0;
     }
     
     .final-cta__title {
@@ -3103,13 +3053,53 @@ body {
         gap: var(--space-2);
     }
 
+    .timer__item {
+        background: rgba(255,255,255,0.15);
+        border-radius: var(--radius-xl);
+        padding: 10px;
+        min-width: 100px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .promo__timer {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        margin-bottom: var(--space-12);
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .final-cta__phone-btn {
+        font-size: var(--font-size-xl);
+        padding: 10px 20px;
+        background: white;
+        color: var(--color-primary);
+        border: none;
+        border-radius: var(--radius-full);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        text-decoration: none;
+        font-weight: var(--font-weight-semibold);
+        transition: all 0.3s ease;
+        margin-bottom: var(--space-6);
+        animation: pulse-cta 2s infinite;
+    }
+
     /* Footer - минимальный дизайн */
     .footer {
-        padding: var(--space-8) 0 var(--space-4);
+        padding: 50px 0;
     }
     
     .footer__main {
-        gap: var(--space-3);
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
     }
     
     .footer__company {
@@ -3117,13 +3107,40 @@ body {
     }
     
     .footer__bottom {
-        gap: var(--space-2);
-        font-size: var(--font-size-xs);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: var(--space-6);
+        flex-direction: column;
+    }
+
+    .footer__link {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: var(--font-size-sm);
+    }
+
+    .masters__grid {
+        display: flex;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-8);
+        margin-top: var(--space-12);
+        flex-direction: column;
+    }
+
+    .step__number {
+        display: none;
+    }
+
+    .step:nth-child(even) .step__content {
+        text-align: left;
     }
 }
 
 /* Extra Small Mobile (до 320px) - Критически малые экраны */
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 320px) {
     .container {
         padding-left: var(--space-3);
         padding-right: var(--space-3);
@@ -3132,5 +3149,77 @@ body {
     :root {
         --font-size-h1: calc(var(--font-size-h1-mobile) - 0.5rem);
         --font-size-h2: calc(var(--font-size-h2-mobile) - 0.25rem);
+    }
+
+    .timer__value {
+        font-size: 24px;
+        font-weight: var(--font-extrabold);
+        font-family: 'Ubuntu Mono', monospace;
+        line-height: 1;
+        margin-bottom: var(--space-1);
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .timer__label {
+        font-size: 11px;
+        font-weight: var(--font-medium);
+        opacity: 0.9;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .timer__item {
+        background: rgba(255,255,255,0.15);
+        border-radius: var(--radius-xl);
+        padding: 5px;;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+        box-shadow: var(--shadow-lg);
+        min-width: 80px;
+    }
+
+    .promo__timer {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        margin-bottom: var(--space-12);
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .step__number {
+        display: none;
+    }
+
+    .step:nth-child(even) .step__content {
+        text-align: left;
+    }
+
+    .step {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        position: relative;
+        flex-direction: column;
+    }
+
+    .section__title {
+        font-size: 28px;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text-primary);
+        margin-bottom: var(--space-4);
+    }
+
+    .work-steps__header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .masters__grid {
+        display: flex;
+        gap: 10px;
+        margin-top: var(--space-12);
+        flex-direction: column;
     }
 }

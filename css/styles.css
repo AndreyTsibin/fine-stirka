@@ -2051,17 +2051,17 @@ body {
         margin-top: var(--space-10);
     }
 
-    /* Reviews Section адаптация для Desktop Small */
-    .reviews {
+    /* Testimonials Section адаптация для Desktop Small */
+    .testimonials {
         padding: var(--space-16) 0;
     }
     
-    .reviews__title {
+    .testimonials__title {
         font-size: var(--font-size-3xl);
         margin-bottom: var(--space-3);
     }
     
-    .reviews__subtitle {
+    .testimonials__subtitle {
         font-size: var(--font-size-lg);
     }
 
@@ -2250,14 +2250,19 @@ body {
         justify-self: center;
     }
 
-    /* Reviews Section - адаптация размеров карточек */
-    .reviews {
+    /* Testimonials Section - адаптация размеров карточек и навигации */
+    .testimonials {
         padding: var(--space-12) 0;
     }
     
-    .reviews__card {
+    .testimonials__card {
         max-width: none; /* Убираем ограничение ширины */
         padding: var(--space-5);
+    }
+    
+    /* Скрываем стрелочки на планшетах, оставляем только точки */
+    .testimonials__nav {
+        display: none;
     }
 
     /* Final CTA Section - корректировка spacing */
@@ -2475,16 +2480,16 @@ body {
         margin-top: var(--space-6);
     }
 
-    /* Reviews Section - одна карточка с навигацией */
-    .reviews {
+    /* Testimonials Section - одна карточка с навигацией */
+    .testimonials {
         padding: var(--space-10) 0;
     }
     
-    .reviews__carousel {
+    .testimonials__carousel {
         max-width: none;
     }
     
-    .reviews__card {
+    .testimonials__card {
         padding: var(--space-4);
         font-size: var(--font-size-sm);
     }

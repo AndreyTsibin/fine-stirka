@@ -193,7 +193,7 @@ body {
     flex-shrink: 0;
 }
 
-.header__logo h2 {
+.header__logo p {
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
     color: var(--color-text-primary);
@@ -469,12 +469,6 @@ body {
     color: var(--color-text-primary);
 }
 
-.hero__subtitle {
-    font-size: var(--font-size-xl);
-    line-height: var(--line-height-relaxed);
-    margin-bottom: var(--space-10);
-    color: var(--color-text-secondary);
-}
 
 /* УТП Features */
 .hero__features {
@@ -483,8 +477,9 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: var(--space-6);
+    gap: 10px;
     margin-bottom: var(--space-10);
+    margin-top: 20px;
 }
 
 .hero__feature {
@@ -548,19 +543,7 @@ body {
     margin-bottom: var(--space-16);
 }
 
-.repairs__title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-4);
-}
 
-.repairs__subtitle {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-}
 
 /* Сетка карточек 3x3 */
 .repairs__grid {
@@ -651,19 +634,7 @@ body {
     margin-bottom: var(--space-16);
 }
 
-.advantages__title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-4);
-}
 
-.advantages__subtitle {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-}
 
 .advantages__grid {
     display: grid;
@@ -747,19 +718,7 @@ body {
     margin-bottom: var(--space-16);
 }
 
-.pricing__title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-4);
-}
 
-.pricing__subtitle {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-}
 
 /* Обертка таблицы */
 .pricing__table-wrapper {
@@ -897,22 +856,7 @@ body {
     margin-bottom: var(--space-12);
 }
 
-.promo__title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
-    color: #FFFFFF;
-    line-height: var(--line-height-tight);
-    margin-bottom: var(--space-4);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
 
-.promo__subtitle {
-    font-size: var(--font-size-xl);
-    color: #FFFFFF;
-    max-width: 600px;
-    margin: 0 auto;
-    opacity: 0.95;
-}
 
 /* Таймер обратного отсчета */
 .promo__timer {
@@ -1028,11 +972,19 @@ body {
     margin-bottom: var(--space-4);
 }
 
+.section__title--white {
+    color: #FFFFFF;
+}
+
 .section__subtitle {
     font-size: var(--font-size-xl);
     color: var(--color-text-secondary);
     max-width: 600px;
     margin: 0 auto;
+}
+
+.section__subtitle--white {
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .steps {
@@ -1161,19 +1113,7 @@ body {
     margin-bottom: var(--space-16);
 }
 
-.masters__title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-4);
-}
 
-.masters__subtitle {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-}
 
 .masters__grid {
     display: grid;
@@ -1276,19 +1216,7 @@ body {
     margin-bottom: var(--space-16);
 }
 
-.testimonials__title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-4);
-}
 
-.testimonials__subtitle {
-    font-size: var(--font-size-xl);
-    color: var(--color-text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-}
 
 .testimonials__carousel {
     position: relative;
@@ -1464,21 +1392,7 @@ body {
     margin-bottom: var(--space-12);
 }
 
-.final-cta__title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
-    color: white;
-    margin-bottom: var(--space-6);
-    line-height: var(--line-height-tight);
-}
 
-.final-cta__subtitle {
-    font-size: var(--font-size-2xl);
-    color: rgba(255, 255, 255, 0.95);
-    line-height: var(--line-height-relaxed);
-    max-width: 600px;
-    margin: 0 auto;
-}
 
 .final-cta__features {
     display: flex;
@@ -1727,7 +1641,7 @@ body {
         gap: 0px;
     }
     
-    .header__logo h2 {
+    .header__logo p {
         font-size: var(--font-size-xl);
     }
     
@@ -1768,10 +1682,6 @@ body {
         margin-bottom: var(--space-5);
     }
     
-    .hero__subtitle {
-        font-size: var(--font-size-lg); 
-        margin-bottom: var(--space-8);
-    }
     
     .hero__features {
         gap: var(--space-5); 
@@ -1799,14 +1709,6 @@ body {
         margin-bottom: var(--space-12); 
     }
     
-    .repairs__title {
-        font-size: var(--font-size-3xl); 
-        margin-bottom: var(--space-3);
-    }
-    
-    .repairs__subtitle {
-        font-size: var(--font-size-lg); 
-    }
     
     .repairs__grid {
         gap: var(--space-5); /* Уменьшаем gap между карточками */
@@ -1822,14 +1724,7 @@ body {
         padding: var(--space-16) 0;
     }
     
-    .advantages__title {
-        font-size: var(--font-size-3xl);
-        margin-bottom: var(--space-3);
-    }
     
-    .advantages__subtitle {
-        font-size: var(--font-size-lg);
-    }
     
     .advantages__grid {
         gap: var(--space-5);
@@ -1844,27 +1739,14 @@ body {
         padding: var(--space-16) 0;
     }
     
-    .pricing__title {
-        font-size: var(--font-size-3xl);
-        margin-bottom: var(--space-3);
-    }
     
-    .pricing__subtitle {
-        font-size: var(--font-size-lg);
-    }
 
     /* Promo Section адаптация для Desktop Small */
     .promo {
         padding: var(--space-16) 0;
     }
     
-    .promo__title {
-        font-size: var(--font-size-3xl);
-    }
     
-    .promo__subtitle {
-        font-size: var(--font-size-lg);
-    }
 
     /* Process Section адаптация для Desktop Small */
     .process {
@@ -1885,14 +1767,7 @@ body {
         padding: var(--space-16) 0;
     }
     
-    .masters__title {
-        font-size: var(--font-size-3xl);
-        margin-bottom: var(--space-3);
-    }
     
-    .masters__subtitle {
-        font-size: var(--font-size-lg);
-    }
     
     .masters__grid {
         gap: var(--space-5);
@@ -1904,28 +1779,14 @@ body {
         padding: var(--space-16) 0;
     }
     
-    .testimonials__title {
-        font-size: var(--font-size-3xl);
-        margin-bottom: var(--space-3);
-    }
     
-    .testimonials__subtitle {
-        font-size: var(--font-size-lg);
-    }
 
     /* Final CTA Section адаптация для Desktop Small */
     .final-cta {
         padding: var(--space-16) 0;
     }
     
-    .final-cta__title {
-        font-size: var(--font-size-3xl);
-        margin-bottom: var(--space-3);
-    }
     
-    .final-cta__subtitle {
-        font-size: var(--font-size-lg);
-    }
 
     .final-cta__header {
         margin-bottom: 30px;
@@ -1967,7 +1828,7 @@ body {
         flex-wrap: wrap;
     }
     
-    .header__logo h2 {
+    .header__logo p {
         font-size: var(--font-size-lg);
     }
     
@@ -2014,11 +1875,6 @@ body {
         text-align: left;
     }
     
-    .hero__subtitle {
-        font-size: 22px;
-        margin-bottom: var(--space-6);
-        text-align: left;
-    }
     
     .hero__cta {
         margin-top: var(--space-8);
@@ -2152,9 +2008,6 @@ body {
     }
 
     /* Promo Section - адаптация для планшетов */
-    .promo__title {
-        font-size: var(--font-size-3xl);
-    }
     
     .promo__timer {
         gap: var(--space-2);
@@ -2208,13 +2061,7 @@ body {
         padding: var(--space-20) 0;
     }
     
-    .final-cta__title {
-        font-size: var(--font-size-3xl);
-    }
     
-    .final-cta__subtitle {
-        font-size: var(--font-size-xl);
-    }
     
     .final-cta__features {
         grid-template-columns: 1fr; /* Вертикальный layout УТП */
@@ -2270,7 +2117,7 @@ body {
         position: relative;
     }
     
-    .header__logo h2 {
+    .header__logo p {
         font-size: var(--font-size-base);
     }
     
@@ -2333,10 +2180,6 @@ body {
         line-height: 1.2;
     }
     
-    .hero__subtitle {
-        font-size: var(--font-size-sm);
-        margin-bottom: var(--space-6);
-    }
     
     .hero__features {
         flex-direction: column; /* Возвращаем вертикальную ориентацию для мобильных */
@@ -2374,14 +2217,7 @@ body {
         padding: var(--space-10) 0;
     }
     
-    .repairs__title {
-        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 */
-        margin-bottom: var(--space-3);
-    }
     
-    .repairs__subtitle {
-        font-size: var(--font-size-base);
-    }
     
     .repairs__grid {
         grid-template-columns: repeat(2, 1fr); /* 2 колонки на больших мобильных */
@@ -2400,9 +2236,6 @@ body {
         padding: var(--space-10) 0;
     }
     
-    .advantages__title {
-        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 */
-    }
     
     .advantages__grid {
         grid-template-columns: 1fr;
@@ -2433,9 +2266,6 @@ body {
         padding: var(--space-10) 0;
     }
     
-    .pricing__title {
-        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 */
-    }
     
     .pricing__table-wrapper {
         overflow-x: auto;
@@ -2506,18 +2336,12 @@ body {
     }
 
     /* Promo Section заголовок */
-    .promo__title {
-        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 для скидки */
-    }
 
     /* Masters Section - одноколоночный layout */
     .masters {
         padding: var(--space-10) 0;
     }
     
-    .masters__title {
-        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 */
-    }
     
     .masters__grid {
         grid-template-columns: 1fr;
@@ -2543,9 +2367,6 @@ body {
         padding: var(--space-10) 0;
     }
     
-    .testimonials__title {
-        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 */
-    }
     
     .testimonials__carousel {
         max-width: none;
@@ -2573,13 +2394,7 @@ body {
         padding: var(--space-16) 0;
     }
     
-    .final-cta__title {
-        font-size: var(--font-size-2xl);
-    }
     
-    .final-cta__subtitle {
-        font-size: var(--font-size-lg);
-    }
     
     .final-cta__features {
         flex-direction: column;
@@ -2649,7 +2464,7 @@ body {
     }
     
     
-    .header__logo h2 {
+    .header__logo p {
         font-size: var(--font-size-sm); /* Очень компактный логотип */
     }
     
@@ -2729,11 +2544,6 @@ body {
         text-align: left;
     }
     
-    .hero__subtitle {
-        font-size: 14px;
-        margin-bottom: var(--space-4);
-        text-align: left;
-    }
     
     .hero__features {
         gap: var(--space-2);
@@ -2783,14 +2593,7 @@ body {
         padding: 50px 0;
     }
     
-    .repairs__title {
-        font-size: 28px;
-        margin-bottom: var(--space-2);
-    }
     
-    .repairs__subtitle {
-        font-size: var(--font-size-sm);
-    }
     
     .repairs__grid {
         grid-template-columns: 1fr; /* Одна колонка на малых экранах */
@@ -2844,14 +2647,7 @@ body {
         padding: 50px 0;
     }
     
-    .advantages__title {
-        font-size: 28px;
-        margin-bottom: var(--space-2);
-    }
     
-    .advantages__subtitle {
-        font-size: var(--font-size-sm);
-    }
     
     .advantages__grid {
         margin-top: var(--space-4);
@@ -2886,14 +2682,7 @@ body {
         padding: 50px 0;
     }
     
-    .pricing__title {
-        font-size: 28px;
-        margin-bottom: var(--space-2);
-    }
     
-    .pricing__subtitle {
-        font-size: var(--font-size-sm);
-    }
     
     /* Убираем горизонтальный скролл в таблице */
     .pricing__table-wrapper {
@@ -2985,14 +2774,7 @@ body {
         padding: 50px 0;
     }
     
-    .masters__title {
-        font-size: 28px;
-        margin-bottom: var(--space-2);
-    }
     
-    .masters__subtitle {
-        font-size: var(--font-size-sm);
-    }
     
     .masters__grid {
         margin-top: var(--space-4);
@@ -3017,14 +2799,7 @@ body {
         padding: 50px 0;
     }
     
-    .testimonials__title {
-        font-size: 28px;
-        margin-bottom: var(--space-2);
-    }
     
-    .testimonials__subtitle {
-        font-size: var(--font-size-sm);
-    }
     
     .testimonials__card {
         padding: var(--space-3);
@@ -3040,13 +2815,7 @@ body {
         padding: 50px 0;
     }
     
-    .final-cta__title {
-        font-size: 28px;
-    }
     
-    .final-cta__subtitle {
-        font-size: var(--font-size-sm);
-    }
     
     .final-cta__features {
         margin-top: var(--space-3);

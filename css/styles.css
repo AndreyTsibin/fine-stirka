@@ -2790,6 +2790,16 @@ body {
         text-align: center;
     }
     
+    /* Добавляем отступ для всех контейнеров с H2 и подзаголовками */
+    .repairs__header,
+    .advantages__header,
+    .pricing__header,
+    .process__header,
+    .masters__header,
+    .testimonials__header {
+        margin-bottom: 30px;
+    }
+    
     .hero__cta {
         text-align: center;
     }

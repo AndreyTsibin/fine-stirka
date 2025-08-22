@@ -365,8 +365,11 @@ body {
 /* УТП Features */
 .hero__features {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
+    flex-direction: row; /* Изменено с column на row для горизонтального расположения */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Выравниваем по вертикали */
+    flex-wrap: wrap; /* Позволяем перенос на мобильных */
+    gap: var(--space-6); /* Увеличиваем gap между УТП */
     margin-bottom: var(--space-10);
 }
 
@@ -1920,7 +1923,7 @@ body {
     }
     
     .hero__features {
-        gap: var(--space-2); /* Уменьшаем gap между УТП */
+        gap: var(--space-5); /* Оптимальный gap для Desktop Small */
         margin-bottom: var(--space-8);
     }
     
@@ -2165,8 +2168,8 @@ body {
     }
     
     .hero__features {
-        justify-content: center; /* Центрируем УТП */
         margin-bottom: var(--space-6);
+        gap: var(--space-4); /* Уменьшаем gap для планшета */
     }
 
     /* Обновляем body padding для уменьшенного header */

@@ -2907,6 +2907,18 @@ body {
         padding: var(--space-3);
         font-size: var(--font-size-xs);
     }
+    
+    /* Repairs Cards - унификация размеров заголовков */
+    .repair-card__title {
+        font-size: 16px !important; /* Единый размер для заголовков карточек */
+        line-height: 1.2;
+        margin-bottom: var(--space-2);
+    }
+    
+    .repair-card__price {
+        font-size: 18px !important; /* Цена немного больше заголовка */
+        font-weight: var(--font-weight-bold);
+    }
 
     /* Advantages Section - компактные карточки */
     .advantages {
@@ -2958,24 +2970,31 @@ body {
         font-size: var(--font-size-sm);
     }
     
+    /* Убираем горизонтальный скролл в таблице */
     .pricing__table-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        overflow-x: visible;
+        width: 100%;
     }
     
     .pricing__table {
-        min-width: 400px; /* Минимальная ширина для мелких экранов */
-        font-size: var(--font-size-xs);
+        width: 100%;
+        font-size: 12px; /* Уменьшаем шрифт для экономии места */
+        table-layout: fixed; /* Фиксированная ширина колонок */
     }
     
-    /* Выравниваем размеры шрифтов для услуг и цен */
-    .pricing__table tbody td,
-    .pricing__price {
-        font-size: var(--font-size-xs) !important;
+    .pricing__table td:first-child {
+        font-size: 11px; /* Еще меньше для названий услуг */
+        padding: var(--space-2);
+        width: 70%; /* Больше места для названий */
+        word-wrap: break-word;
     }
     
-    .pricing__table thead th {
-        font-size: var(--font-size-sm) !important;
+    .pricing__table td:last-child {
+        font-size: 14px; /* Цены читаемые */
+        font-weight: var(--font-weight-bold);
+        text-align: right;
+        width: 30%; /* Меньше места для цен */
+        padding: var(--space-2);
     }
 
     /* Process Section - упрощенный вертикальный timeline */

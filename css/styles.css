@@ -2800,7 +2800,7 @@ body {
     }
     
     .hero__title {
-        font-size: var(--font-size-4xl); /* Увеличиваем размер H1 */
+        font-size: 32px; /* Оптимальный размер H1 для малых экранов */
         margin-bottom: var(--space-3);
         line-height: 1.1;
     }
@@ -2832,6 +2832,16 @@ body {
         display: none;
     }
 
+    /* Уменьшаем размер кнопки на hero экране */
+    .hero .btn--primary {
+        font-size: var(--font-size-base); /* Уменьшаем с lg до base */
+        padding: var(--space-3) var(--space-6); /* Уменьшаем отступы */
+    }
+
+    .hero .btn--primary i {
+        font-size: var(--font-size-lg); /* Уменьшаем иконку с xl до lg */
+    }
+
     /* Обновляем body padding для уменьшенного header */
     body {
         padding-top: 52px;
@@ -2843,7 +2853,7 @@ body {
     }
     
     .repairs__title {
-        font-size: var(--font-size-4xl);
+        font-size: 32px;
         margin-bottom: var(--space-2);
     }
     
@@ -2869,7 +2879,7 @@ body {
     }
     
     .advantages__title {
-        font-size: var(--font-size-4xl);
+        font-size: 32px;
         margin-bottom: var(--space-2);
     }
     
@@ -2905,7 +2915,7 @@ body {
     }
     
     .pricing__title {
-        font-size: var(--font-size-4xl);
+        font-size: 32px;
         margin-bottom: var(--space-2);
     }
     
@@ -2939,7 +2949,7 @@ body {
     }
     
     .process__title {
-        font-size: var(--font-size-4xl);
+        font-size: 32px;
         margin-bottom: var(--space-2);
     }
     
@@ -2953,7 +2963,7 @@ body {
     }
     
     .masters__title {
-        font-size: var(--font-size-4xl);
+        font-size: 32px;
         margin-bottom: var(--space-2);
     }
     
@@ -2972,7 +2982,7 @@ body {
     }
     
     .testimonials__title {
-        font-size: var(--font-size-4xl);
+        font-size: 32px;
         margin-bottom: var(--space-2);
     }
     
@@ -2991,7 +3001,7 @@ body {
     }
     
     .final-cta__title {
-        font-size: var(--font-size-4xl);
+        font-size: 32px;
     }
     
     .final-cta__subtitle {

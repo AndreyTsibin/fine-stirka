@@ -2925,6 +2925,22 @@ body {
         min-height: 100px;
         padding: var(--space-3);
         font-size: var(--font-size-xs);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для выразительности */
+        border-radius: var(--radius-lg);
+        background: white;
+    }
+    
+    /* Уменьшаем отступы внутри карточек ремонта */
+    .repairs__card .repair-card__title {
+        margin-bottom: var(--space-1); /* Уменьшаем отступ после заголовка */
+    }
+    
+    .repairs__card .repair-card__description {
+        margin-bottom: var(--space-2); /* Уменьшаем отступ после описания */
+    }
+    
+    .repairs__card .repair-card__price {
+        margin-top: var(--space-1); /* Минимальный отступ сверху для цены */
     }
     
     /* Repairs Cards - унификация размеров заголовков */

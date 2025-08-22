@@ -2800,7 +2800,7 @@ body {
     }
     
     .hero__title {
-        font-size: 32px; /* Оптимальный размер H1 для малых экранов */
+        font-size: 28px; /* Оптимальный размер H1 для малых экранов */
         margin-bottom: var(--space-3);
         line-height: 1.1;
     }
@@ -2853,7 +2853,7 @@ body {
     }
     
     .repairs__title {
-        font-size: 32px;
+        font-size: 28px;
         margin-bottom: var(--space-2);
     }
     
@@ -2879,7 +2879,7 @@ body {
     }
     
     .advantages__title {
-        font-size: 32px;
+        font-size: 28px;
         margin-bottom: var(--space-2);
     }
     
@@ -2915,7 +2915,7 @@ body {
     }
     
     .pricing__title {
-        font-size: 32px;
+        font-size: 28px;
         margin-bottom: var(--space-2);
     }
     
@@ -2949,7 +2949,7 @@ body {
     }
     
     .process__title {
-        font-size: 32px;
+        font-size: 28px;
         margin-bottom: var(--space-2);
     }
     
@@ -2963,7 +2963,7 @@ body {
     }
     
     .masters__title {
-        font-size: 32px;
+        font-size: 28px;
         margin-bottom: var(--space-2);
     }
     
@@ -2982,7 +2982,7 @@ body {
     }
     
     .testimonials__title {
-        font-size: 32px;
+        font-size: 28px;
         margin-bottom: var(--space-2);
     }
     
@@ -3001,7 +3001,7 @@ body {
     }
     
     .final-cta__title {
-        font-size: 32px;
+        font-size: 28px;
     }
     
     .final-cta__subtitle {

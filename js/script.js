@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPromoTimer();
     initTestimonialsCarousel();
     initSmoothScrolling();
+    initMobileMenu();
 });
 
 // Показать/скрыть дополнительные услуги в прайс-листе
@@ -153,3 +154,58 @@ const smoothScroll = target => {
         });
     }
 };
+
+// Мобильное меню
+function initMobileMenu() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.header__mobile-nav-link');
+    
+    if (!mobileMenuToggle || !mobileMenu) return;
+    
+    // Переключение мобильного меню
+    mobileMenuToggle.addEventListener('click', () => {
+        const isActive = mobileMenuToggle.classList.contains('active');
+        
+        if (isActive) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    });
+    
+    // Закрытие меню при клике на ссылку
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+    
+    // Закрытие меню при клике вне его области
+    document.addEventListener('click', (e) => {
+        if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Закрытие меню при нажатии ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeMobileMenu();
+        }
+    });
+    
+    function openMobileMenu() {
+        mobileMenuToggle.classList.add('active');
+        mobileMenu.classList.add('active');
+        mobileMenuToggle.setAttribute('aria-label', 'Закрыть меню');
+        document.body.style.overflow = 'hidden'; // Предотвращаем скролл страницы
+    }
+    
+    function closeMobileMenu() {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-label', 'Открыть меню');
+        document.body.style.overflow = ''; // Восстанавливаем скролл страницы
+    }
+}

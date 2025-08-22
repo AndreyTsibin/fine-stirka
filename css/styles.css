@@ -271,6 +271,124 @@ body {
     flex-shrink: 0;
 }
 
+/* Мобильное меню - по умолчанию скрыто */
+.header__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    gap: 4px;
+}
+
+.header__burger-line {
+    width: 20px;
+    height: 2px;
+    background-color: var(--color-text-primary);
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.header__burger.active .header__burger-line:nth-child(1) {
+    transform: rotate(45deg) translate(3px, 3px);
+}
+
+.header__burger.active .header__burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.header__burger.active .header__burger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(3px, -3px);
+}
+
+.header__mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-bg-primary);
+    box-shadow: var(--shadow-lg);
+    z-index: 99;
+    padding: var(--space-6);
+    border-top: 1px solid var(--color-bg-secondary);
+}
+
+.header__mobile-menu.active {
+    display: block;
+}
+
+.header__mobile-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: var(--space-6);
+}
+
+.header__mobile-nav-list li {
+    margin-bottom: var(--space-4);
+}
+
+.header__mobile-nav-link {
+    display: block;
+    padding: var(--space-3) 0;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    border-bottom: 1px solid var(--color-bg-secondary);
+    transition: color 0.3s ease;
+}
+
+.header__mobile-nav-link:hover {
+    color: var(--color-primary);
+}
+
+.header__mobile-contacts {
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-bg-secondary);
+}
+
+.header__mobile-phone,
+.header__mobile-schedule {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.header__mobile-phone i,
+.header__mobile-schedule i {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+}
+
+.header__mobile-phone a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+.header__mobile-phone a:hover {
+    color: var(--color-primary);
+}
+
+.header__mobile-schedule {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+}
+
+.header__mobile-cta {
+    text-align: center;
+}
+
 /* Button Components */
 .btn {
     display: inline-flex;
@@ -2328,31 +2446,21 @@ body {
         height: 20px;
     }
     
-    /* Скрываем основную навигацию на мобильном */
-    .header__nav {
+    /* Скрываем десктопную навигацию и контакты, показываем мобильное меню */
+    .header__nav,
+    .header__contacts,
+    .header__cta {
         display: none;
     }
     
-    /* Упрощаем контакты - только телефон */
-    .header__contacts {
+    /* Показываем бургер-меню */
+    .header__burger {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: var(--space-2);
     }
     
-    .header__schedule {
-        display: none; /* Скрываем расписание на мобильном */
-    }
-    
-    .header__phone a {
-        font-size: var(--font-size-sm);
-    }
-    
-    /* Очень компактная CTA кнопка */
-    .btn {
-        padding: var(--space-1) var(--space-3);
-        font-size: var(--font-size-xs);
+    /* Оптимизируем header layout для мобильного */
+    .header__content {
+        justify-content: space-between; /* Логотип слева, бургер справа */
     }
 
     /* Hero Section - полностью одноколоночный layout */
@@ -2570,14 +2678,26 @@ body {
         height: 18px;
     }
     
-    .header__phone a {
-        font-size: var(--font-size-xs);
+    /* На Mobile Small также скрываем десктопные элементы */
+    .header__nav,
+    .header__contacts,
+    .header__cta {
+        display: none;
     }
     
-    /* Минимальная CTA кнопка */
-    .btn {
-        padding: var(--space-1) var(--space-2);
-        font-size: 10px; /* Критически малый размер */
+    /* Показываем бургер-меню */
+    .header__burger {
+        display: flex;
+        width: 28px;
+        height: 28px; /* Еще меньше для малых экранов */
+    }
+    
+    .header__burger-line {
+        width: 18px; /* Уменьшаем ширину линий */
+    }
+    
+    .header__content {
+        justify-content: space-between;
     }
 
     /* Hero Section - оптимизация для малых экранов */

@@ -2861,6 +2861,22 @@ body {
         font-size: 14px !important;
     }
 
+    /* Общие исправления для Mobile Small */
+    * {
+        box-sizing: border-box;
+    }
+    
+    /* Предотвращаем горизонтальный скролл */
+    body {
+        overflow-x: hidden;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
     /* Обновляем body padding для уменьшенного header */
     body {
         padding-top: 52px;

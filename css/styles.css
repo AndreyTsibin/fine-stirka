@@ -2097,6 +2097,191 @@ body {
         padding-left: var(--space-6);
         padding-right: var(--space-6);
     }
+
+    /* Header адаптация для Tablet - компактный layout */
+    .header {
+        height: 64px; /* Дальнейшее уменьшение высоты */
+    }
+    
+    .header__content {
+        height: 64px;
+        gap: var(--space-3); /* Уменьшаем gap между элементами */
+        flex-wrap: wrap; /* Позволяем перенос элементов если нужно */
+    }
+    
+    .header__logo h2 {
+        font-size: var(--font-size-lg); /* Еще больше уменьшаем логотип */
+    }
+    
+    .header__logo-icon {
+        width: 24px;
+        height: 24px; /* Уменьшаем иконку */
+    }
+    
+    /* Скрываем навигацию на планшетах или делаем компактной */
+    .header__nav-list {
+        gap: var(--space-3);
+        font-size: var(--font-size-sm); /* Уменьшаем текст навигации */
+    }
+    
+    /* Оптимизируем контакты для планшета */
+    .header__contacts {
+        gap: var(--space-1);
+    }
+    
+    .header__phone a {
+        font-size: var(--font-size-sm); /* Уменьшаем телефон */
+    }
+    
+    .header__schedule {
+        font-size: var(--font-size-xs); /* Мелкий размер расписания */
+    }
+    
+    /* Компактная CTA кнопка для планшета */
+    .btn {
+        padding: var(--space-2) var(--space-4);
+        font-size: var(--font-size-xs);
+    }
+
+    /* Hero Section - возможный переход к одноколоночному layout */
+    .hero {
+        padding: var(--space-16) 0;
+    }
+    
+    .hero__content {
+        grid-template-columns: 1fr; /* Переход к одноколоночному layout */
+        gap: var(--space-10);
+        text-align: center; /* Центрируем содержимое */
+    }
+    
+    .hero__title {
+        font-size: var(--font-size-3xl); /* Используем tablet размер */
+        margin-bottom: var(--space-4);
+    }
+    
+    .hero__subtitle {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--space-6);
+    }
+    
+    .hero__features {
+        justify-content: center; /* Центрируем УТП */
+        margin-bottom: var(--space-6);
+    }
+
+    /* Обновляем body padding для уменьшенного header */
+    body {
+        padding-top: 64px;
+    }
+
+    /* Repairs Section - переход к сетке 2x3 или адаптивной */
+    .repairs {
+        padding: var(--space-12) 0;
+    }
+    
+    .repairs__grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки для планшета */
+        gap: var(--space-4);
+        margin-top: var(--space-8);
+    }
+    
+    .repairs__card {
+        min-height: 140px; /* Уменьшаем высоту карточек */
+        padding: var(--space-5);
+    }
+
+    /* Advantages Section - переход к вертикальному layout */
+    .advantages {
+        padding: var(--space-12) 0;
+    }
+    
+    .advantages__grid {
+        grid-template-columns: 1fr; /* Одна колонка для планшета */
+        gap: var(--space-4);
+        max-width: 600px;
+        margin: var(--space-8) auto 0;
+    }
+    
+    .advantages__card {
+        padding: var(--space-5);
+        text-align: center; /* Центрируем содержимое карточек */
+    }
+
+    /* Pricing Section - адаптация таблицы с горизонтальным скроллом */
+    .pricing {
+        padding: var(--space-12) 0;
+    }
+    
+    .pricing__table-wrapper {
+        overflow-x: auto; /* Горизонтальный скролл для таблицы */
+        -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
+    }
+    
+    .pricing__table {
+        min-width: 600px; /* Минимальная ширина таблицы */
+    }
+
+    /* Process Section - упрощение timeline */
+    .process {
+        padding: var(--space-12) 0;
+    }
+    
+    .process__timeline {
+        gap: var(--space-6); /* Уменьшаем gap в timeline */
+    }
+
+    /* Masters Section - переход к 2+1 layout или вертикальному */
+    .masters {
+        padding: var(--space-12) 0;
+    }
+    
+    .masters__grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+        gap: var(--space-4);
+        margin-top: var(--space-8);
+    }
+    
+    .masters__card:last-child {
+        grid-column: 1 / -1; /* Последняя карточка на всю ширину */
+        max-width: 300px;
+        justify-self: center;
+    }
+
+    /* Reviews Section - адаптация размеров карточек */
+    .reviews {
+        padding: var(--space-12) 0;
+    }
+    
+    .reviews__card {
+        max-width: none; /* Убираем ограничение ширины */
+        padding: var(--space-5);
+    }
+
+    /* Final CTA Section - корректировка spacing */
+    .final-cta {
+        padding: var(--space-12) 0;
+    }
+    
+    .final-cta__features {
+        grid-template-columns: 1fr; /* Вертикальный layout УТП */
+        gap: var(--space-4);
+        margin-top: var(--space-6);
+    }
+
+    /* Footer - реорганизация блоков */
+    .footer {
+        padding: var(--space-12) 0 var(--space-6);
+    }
+    
+    .footer__main {
+        grid-template-columns: 1fr 1fr; /* 2 колонки на планшете */
+        gap: var(--space-6);
+    }
+    
+    .footer__company {
+        grid-column: 1 / -1; /* Блок компании на всю ширину */
+        margin-bottom: var(--space-4);
+    }
 }
 
 /* Mobile Large (480px - 640px) - Переход к мобильному дизайну */

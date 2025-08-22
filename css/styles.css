@@ -2495,7 +2495,7 @@ body {
     }
     
     .hero__title {
-        font-size: var(--font-size-2xl); /* Мобильный размер заголовка */
+        font-size: var(--font-size-4xl); /* Увеличиваем размер H1 */
         margin-bottom: var(--space-4);
         line-height: 1.2;
     }
@@ -2542,7 +2542,7 @@ body {
     }
     
     .repairs__title {
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 */
         margin-bottom: var(--space-3);
     }
     
@@ -2565,6 +2565,10 @@ body {
     /* Advantages Section - одноколоночный layout */
     .advantages {
         padding: var(--space-10) 0;
+    }
+    
+    .advantages__title {
+        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 */
     }
     
     .advantages__grid {
@@ -2596,6 +2600,10 @@ body {
         padding: var(--space-10) 0;
     }
     
+    .pricing__title {
+        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 */
+    }
+    
     .pricing__table-wrapper {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -2621,13 +2629,26 @@ body {
         padding: var(--space-10) 0;
     }
     
+    .section__title {
+        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 для этапов работы */
+    }
+    
     .process__timeline {
         gap: var(--space-4);
+    }
+
+    /* Promo Section заголовок */
+    .promo__title {
+        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 для скидки */
     }
 
     /* Masters Section - одноколоночный layout */
     .masters {
         padding: var(--space-10) 0;
+    }
+    
+    .masters__title {
+        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 */
     }
     
     .masters__grid {
@@ -2639,6 +2660,10 @@ body {
     /* Testimonials Section - одна карточка с навигацией */
     .testimonials {
         padding: var(--space-10) 0;
+    }
+    
+    .testimonials__title {
+        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 */
     }
     
     .testimonials__carousel {
@@ -2656,7 +2681,7 @@ body {
     }
     
     .final-cta__title {
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 */
     }
     
     .final-cta__subtitle {

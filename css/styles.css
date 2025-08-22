@@ -2492,6 +2492,9 @@ body {
     .hero__content {
         grid-template-columns: 1fr;
         gap: var(--space-8);
+        justify-items: center; /* Центрируем содержимое по горизонтали */
+        text-align: center; /* Центрируем текст */
+        width: 100%;
     }
     
     .hero__title {

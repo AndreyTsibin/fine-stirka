@@ -1912,6 +1912,7 @@ body {
 .footer__company-details {
     font-size: var(--font-size-sm);
     color: rgba(255, 255, 255, 0.6);
+    text-align: left; /* Выравниваем реквизиты по левому краю всегда */
 }
 
 .footer__company-details p {

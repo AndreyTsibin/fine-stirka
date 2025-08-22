@@ -2463,6 +2463,23 @@ body {
         justify-content: space-between; /* Логотип слева, бургер справа */
     }
 
+    /* Центрируем все заголовки и контент в мобильной версии */
+    .hero__text,
+    .repairs__header,
+    .advantages__header,
+    .pricing__header,
+    .promo__content,
+    .process__header,
+    .masters__header,
+    .testimonials__header,
+    .final-cta__content {
+        text-align: center;
+    }
+    
+    .hero__cta {
+        text-align: center;
+    }
+
     /* Hero Section - полностью одноколоночный layout */
     .hero {
         padding: var(--space-12) 0;
@@ -2471,7 +2488,6 @@ body {
     .hero__content {
         grid-template-columns: 1fr;
         gap: var(--space-8);
-        text-align: center;
     }
     
     .hero__title {
@@ -2698,6 +2714,23 @@ body {
     
     .header__content {
         justify-content: space-between;
+    }
+
+    /* Центрируем все заголовки и контент в мобильной версии */
+    .hero__text,
+    .repairs__header,
+    .advantages__header,
+    .pricing__header,
+    .promo__content,
+    .process__header,
+    .masters__header,
+    .testimonials__header,
+    .final-cta__content {
+        text-align: center;
+    }
+    
+    .hero__cta {
+        text-align: center;
     }
 
     /* Hero Section - оптимизация для малых экранов */

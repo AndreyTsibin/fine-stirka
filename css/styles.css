@@ -2799,6 +2799,15 @@ body {
         padding: var(--space-10) 0;
     }
     
+    .hero__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-8);
+        text-align: center;
+        width: 100%;
+    }
+    
     .hero__title {
         font-size: 28px; /* Оптимальный размер H1 для малых экранов */
         margin-bottom: var(--space-3);

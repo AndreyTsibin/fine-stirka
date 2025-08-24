@@ -83,6 +83,35 @@
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
+  /* Border and Background Colors */
+  --color-border: rgba(229, 231, 235, 1);
+  --color-bg-light: #F3F4F6;
+
+  /* Additional Font Weights */
+  --font-weight-extrabold: 800;
+
+  /* Additional Text Sizes */
+  --font-size-text-xl: var(--font-size-xl);
+  --font-size-text-lg: var(--font-size-lg);
+  --font-size-text-base: var(--font-size-base);
+  --font-size-text-sm: var(--font-size-sm);
+  
+  /* Color Variations */
+  --color-primary-200: rgba(5, 150, 105, 0.2);
+  
+  /* Common Values - Часто используемые значения */
+  --transition-default: all 0.3s ease;
+  --padding-section-mobile: 50px 0;
+  --padding-card-default: var(--space-6);
+  --padding-card-mobile: var(--space-3);
+  --border-radius-card: var(--radius-xl);
+  --min-height-card: 140px;
+  --gap-grid-default: var(--space-6);
+  --gap-grid-mobile: var(--space-3);
+  --font-size-icon-large: 48px;
+  --font-size-icon-medium: 36px;
+  --font-size-icon-small: 32px;
+
   /* Breakpoints - Адаптивные точки перелома */
   --bp-mobile-small: 320px;   /* Малые мобильные */
   --bp-mobile-large: 480px;   /* Большие мобильные */
@@ -162,7 +191,7 @@ body {
     box-shadow: var(--shadow-md);
     z-index: 100;
     height: 80px;
-    transition: all 0.3s ease;
+    transition: var(--transition-default);
 }
 
 .header__content {
@@ -179,7 +208,7 @@ body {
     align-items: center;
     gap: var(--space-3);
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    transition: var(--transition-default);
 }
 
 .header__logo:hover {
@@ -884,7 +913,7 @@ body {
 
 .timer__value {
     font-size: var(--font-size-4xl);
-    font-weight: var(--font-extrabold);
+    font-weight: var(--font-weight-extrabold);
     font-family: 'Ubuntu Mono', monospace;
     line-height: 1;
     margin-bottom: var(--space-1);
@@ -893,7 +922,7 @@ body {
 
 .timer__label {
     font-size: var(--font-size-sm);
-    font-weight: var(--font-medium);
+    font-weight: var(--font-weight-medium);
     opacity: 0.9;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -939,7 +968,7 @@ body {
 
 /* Блок "Этапы работы" */
 .work-steps {
-    background: var(--bg-light);
+    background: var(--color-bg-light);
     padding: var(--space-20) 0;
 }
 
@@ -1009,7 +1038,7 @@ body {
 }
 
 .step__digit {
-    font-size: var(--text-xl);
+    font-size: var(--font-size-text-xl);
     font-weight: 700;
     color: white;
 }
@@ -1704,19 +1733,6 @@ body {
     
     
 
-    /* Process Section адаптация для Desktop Small */
-    .process {
-        padding: var(--space-16) 0;
-    }
-    
-    .process__title {
-        font-size: var(--font-size-3xl);
-        margin-bottom: var(--space-3);
-    }
-    
-    .process__subtitle {
-        font-size: var(--font-size-lg);
-    }
 
     /* Masters Section адаптация для Desktop Small */
     .masters {
@@ -1909,14 +1925,6 @@ body {
         min-width: 600px; /* Минимальная ширина таблицы */
     }
 
-    /* Process Section - упрощение timeline */
-    .process {
-        padding: var(--space-12) 0;
-    }
-    
-    .process__timeline {
-        gap: var(--space-6); /* Уменьшаем gap в timeline */
-    }
 
     /* Masters Section - переход к 2+1 layout или вертикальному */
     .masters {
@@ -2003,7 +2011,7 @@ body {
     }
     
     .step__digit {
-        font-size: var(--text-lg);
+        font-size: var(--font-size-text-lg);
     }
     
     .step__icon {
@@ -2278,7 +2286,7 @@ body {
     }
     
     .step__digit {
-        font-size: var(--text-base);
+        font-size: var(--font-size-text-base);
     }
     
     .step__icon {
@@ -2291,25 +2299,13 @@ body {
     }
     
     .step__title {
-        font-size: var(--text-base);
+        font-size: var(--font-size-text-base);
     }
     
     .step__description {
-        font-size: var(--text-sm);
+        font-size: var(--font-size-text-sm);
     }
 
-    /* Process Section - вертикальный timeline */
-    .process {
-        padding: var(--space-10) 0;
-    }
-    
-    .section__title {
-        font-size: var(--font-size-4xl); /* Увеличиваем размер H2 для этапов работы */
-    }
-    
-    .process__timeline {
-        gap: var(--space-4);
-    }
 
     /* Promo Section заголовок */
 
@@ -2628,29 +2624,6 @@ body {
         color: var(--color-primary);
     }
 
-    .repairs__card .repair-card__title {
-        margin-bottom: var(--space-1); /* Уменьшаем отступ после заголовка */
-    }
-    
-    .repairs__card .repair-card__description {
-        margin-bottom: var(--space-2); /* Уменьшаем отступ после описания */
-    }
-    
-    .repairs__card .repair-card__price {
-        margin-top: var(--space-1); /* Минимальный отступ сверху для цены */
-    }
-    
-    /* Repairs Cards - унификация размеров заголовков */
-    .repair-card__title {
-        font-size: 16px;
-        line-height: 1.2;
-        margin-bottom: var(--space-2);
-    }
-    
-    .repair-card__price {
-        font-size: 18px;
-        font-weight: var(--font-weight-bold);
-    }
 
     /* Advantages Section - компактные карточки */
     .advantages {
@@ -2683,7 +2656,7 @@ body {
     }
 
     .work-steps {
-        background: var(--bg-light);
+        background: var(--color-bg-light);
         padding: 50px 0;
     }
 
@@ -2765,19 +2738,6 @@ body {
         padding-bottom: 20px;
     }
 
-    /* Process Section - упрощенный вертикальный timeline */
-    .process {
-        padding: var(--space-8) 0;
-    }
-    
-    .process__title {
-        font-size: 28px;
-        margin-bottom: var(--space-2);
-    }
-    
-    .process__subtitle {
-        font-size: var(--font-size-sm);
-    }
 
     /* Masters Section - компактные карточки */
     .masters {
@@ -2926,7 +2886,7 @@ body {
 
     .timer__value {
         font-size: 24px;
-        font-weight: var(--font-extrabold);
+        font-weight: var(--font-weight-extrabold);
         font-family: 'Ubuntu Mono', monospace;
         line-height: 1;
         margin-bottom: var(--space-1);
@@ -2935,7 +2895,7 @@ body {
 
     .timer__label {
         font-size: 11px;
-        font-weight: var(--font-medium);
+        font-weight: var(--font-weight-medium);
         opacity: 0.9;
         text-transform: uppercase;
         letter-spacing: 0.05em;

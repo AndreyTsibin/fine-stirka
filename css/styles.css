@@ -238,17 +238,17 @@ body {
     gap: var(--space-6);
 }
 
-.header__nav-list a {
-    color: var(--color-text-primary);
-    text-decoration: none;
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-medium);
-    transition: color 0.3s ease;
-    white-space: nowrap;
+html .header__nav-list a {
+    color: var(--color-text-primary) !important;
+    text-decoration: none !important;
+    font-size: var(--font-size-base) !important;
+    font-weight: var(--font-weight-medium) !important;
+    transition: color 0.3s ease !important;
+    white-space: nowrap !important;
 }
 
-.header__nav-list a:hover {
-    color: var(--color-primary);
+html .header__nav-list a:hover {
+    color: var(--color-primary) !important;
 }
 
 /* Contacts */
@@ -270,16 +270,16 @@ body {
     font-weight: var(--font-weight-bold);
 }
 
-.header__phone a {
-    color: var(--color-text-primary);
-    text-decoration: none;
-    font-size: var(--font-size-lg);
-    white-space: nowrap;
-    transition: color 0.3s ease;
+html .header__phone a {
+    color: var(--color-text-primary) !important;
+    text-decoration: none !important;
+    font-size: var(--font-size-lg) !important;
+    white-space: nowrap !important;
+    transition: color 0.3s ease !important;
 }
 
-.header__phone a:hover {
-    color: var(--color-primary);
+html .header__phone a:hover {
+    color: var(--color-primary) !important;
 }
 
 .header__phone i {
@@ -401,15 +401,15 @@ body {
     font-size: var(--font-size-lg);
 }
 
-.header__mobile-phone a {
-    color: var(--color-text-primary);
-    text-decoration: none;
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-bold);
+html .header__mobile-phone a {
+    color: var(--color-text-primary) !important;
+    text-decoration: none !important;
+    font-size: var(--font-size-lg) !important;
+    font-weight: var(--font-weight-bold) !important;
 }
 
-.header__mobile-phone a:hover {
-    color: var(--color-primary);
+html .header__mobile-phone a:hover {
+    color: var(--color-primary) !important;
 }
 
 .header__mobile-schedule {
@@ -422,44 +422,44 @@ body {
 }
 
 /* Button Components */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-3) var(--space-6);
-    border: none;
-    border-radius: var(--radius-full);
-    text-decoration: none;
-    font-family: var(--font-family);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-semibold);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    background: var(--gradient-cta);
-    color: white;
-    box-shadow: var(--shadow-md);
+html .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    padding: var(--space-3) var(--space-6) !important;
+    border: none !important;
+    border-radius: var(--radius-full) !important;
+    text-decoration: none !important;
+    font-family: var(--font-family) !important;
+    font-size: var(--font-size-base) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    white-space: nowrap !important;
+    background: var(--gradient-cta) !important;
+    color: white !important;
+    box-shadow: var(--shadow-md) !important;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+html .btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-lg) !important;
 }
 
-.btn i {
-    font-size: var(--font-size-lg);
+html .btn i {
+    font-size: var(--font-size-lg) !important;
 }
 
-.btn--white {
-    background: white;
-    color: var(--color-primary);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+html .btn--white {
+    background: white !important;
+    color: var(--color-primary) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
-.btn--white:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+html .btn--white:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
 }
 
 
@@ -831,29 +831,29 @@ body {
     margin: var(--space-8) 0;
 }
 
-.btn--secondary {
-    background: white;
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
-    padding: var(--space-4) var(--space-8);
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-semibold);
-    border-radius: var(--radius-full);
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    transition: all 0.3s ease;
+html .btn--secondary {
+    background: white !important;
+    color: var(--color-primary) !important;
+    border: 2px solid var(--color-primary) !important;
+    padding: var(--space-4) var(--space-8) !important;
+    font-size: var(--font-size-lg) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    border-radius: var(--radius-full) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    transition: all 0.3s ease !important;
 }
 
-.btn--secondary:hover {
-    background: var(--color-primary);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+html .btn--secondary:hover {
+    background: var(--color-primary) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-md) !important;
 }
 
-.btn--secondary i {
-    font-size: var(--font-size-xl);
+html .btn--secondary i {
+    font-size: var(--font-size-xl) !important;
 }
 
 /* ==============================

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     initPricingToggle();
+    initRepairsToggle();
     initPromoTimer();
     initTestimonialsCarousel();
     initSmoothScrolling();
@@ -26,6 +27,29 @@ function initPricingToggle() {
         btn.innerHTML = expanded 
             ? '<i class="ri-subtract-line"></i> Скрыть'
             : '<i class="ri-add-line"></i> Показать еще';
+    });
+}
+
+// Показать/скрыть дополнительные карточки неисправностей
+function initRepairsToggle() {
+    const btn = document.getElementById('showMoreRepairs');
+    const cards = document.querySelectorAll('.repairs__card:nth-child(n+5)');
+    
+    if (!btn || !cards.length) return;
+    
+    let expanded = false;
+    btn.addEventListener('click', () => {
+        expanded = !expanded;
+        cards.forEach(card => card.style.display = expanded ? 'block' : 'none');
+        btn.innerHTML = expanded 
+            ? '<i class="ri-subtract-line"></i> Скрыть'
+            : '<i class="ri-add-line"></i> Показать еще';
+        
+        if (expanded) {
+            btn.classList.add('expanded');
+        } else {
+            btn.classList.remove('expanded');
+        }
     });
 }
 

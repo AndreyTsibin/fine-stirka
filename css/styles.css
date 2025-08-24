@@ -146,7 +146,6 @@ body {
     background-color: var(--color-bg-primary);
 }
 
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1841,6 +1840,12 @@ body {
         display: none;
     }
 
+    /* Выравнивание подзаголовков по левому краю */
+    .section__subtitle {
+        text-align: left;
+        margin: 0;
+    }
+
     .hero__features {
         margin-bottom: var(--space-6);
         gap: var(--space-4); /* Уменьшаем gap для планшета */
@@ -2483,7 +2488,12 @@ body {
         line-height: 1.1;
         text-align: left;
     }
-    
+
+    /* Выравнивание подзаголовков по левому краю */
+    .section__subtitle {
+        text-align: left;
+        margin: 0;
+    }
     
     .hero__features {
         gap: var(--space-2);
